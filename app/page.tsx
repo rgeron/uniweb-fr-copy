@@ -60,99 +60,62 @@ export default function Home() {
         <FeaturesSection
           features={[
             {
-              badge: "⏰ Schedule",
-              title: "Schedule your post",
+              badge: "1️⃣ Étape 1",
+              title: "Ajouter un nom de domaine",
               description:
-                "Schedule your post on the Threader in a few clicks.",
+                "Ajoutez facilement votre domaine sur notre plateforme pour commencer à rendre votre site accessible.",
               component: (
-                <div className="flex items-center justify-center p-4 rounded-lg bg-gray-100 dark:bg-gray-800 h-[200px] w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
+                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
+                  <img
+                    src="/gif/ajouter.gif"
+                    alt="Ajouter un nom de domaine"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               ),
             },
             {
-              badge: "📅 Calendar",
-              title: "See what you scheduled",
+              badge: "2️⃣ Étape 2",
+              title: "Copier le script donné par la plateforme",
               description:
-                "With the calendar view, you can see what you scheduled and when.",
+                "Notre plateforme génère un script unique adapté à votre site web.",
               component: (
-                <div className="flex items-center justify-center p-4 rounded-lg bg-gray-100 dark:bg-gray-800 h-[200px] w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                    <line x1="16" y1="2" x2="16" y2="6" />
-                    <line x1="8" y1="2" x2="8" y2="6" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                  </svg>
+                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
+                  <img
+                    src="/gif/script.gif"
+                    alt="Copier le script"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               ),
             },
             {
-              badge: "👁️ Preview",
-              title: "Preview your post",
+              badge: "3️⃣ Étape 3",
+              title: "Ajouter le script dans le head du site",
               description:
-                "Preview your post before scheduling it to see how it will look like.",
+                "Intégrez simplement notre script dans le code source de votre site pour activer toutes les fonctionnalités d'accessibilité.",
               component: (
-                <div className="flex items-center justify-center p-4 rounded-lg bg-gray-100 dark:bg-gray-800 h-[200px] w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
+                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
+                  <img
+                    src="/gif/code.gif"
+                    alt="Ajouter le script dans le head"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               ),
             },
             {
-              badge: "🔄 Repost",
-              title: "Schedule repost",
+              badge: "4️⃣ Résultat",
+              title: "L'outil est directement sur le site internet",
               description:
-                "Automatically repost your post after a certain amount of time.",
+                "Une fois installé, notre outil d'accessibilité est immédiatement opérationnel sur votre site, offrant une expérience inclusive à tous vos visiteurs.",
               component: (
-                <div className="flex items-center justify-center p-4 rounded-lg bg-gray-100 dark:bg-gray-800 h-[200px] w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2" />
-                  </svg>
+                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
+                  <img
+                    src="/gif/site.gif"
+                    alt="Résultat sur le site"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               ),
             },
