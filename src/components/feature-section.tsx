@@ -18,19 +18,16 @@ export const FeaturesSection = ({
     >
       <div className="relative flex flex-col gap-16 lg:gap-28">
         <div className="flex flex-col items-center gap-2">
-          <Badge>Les fonctionnalités essentielles</Badge>
+          <Badge>Comment ça marche ?</Badge>
           <Typography variant="h2" className="m-auto max-w-xl text-center">
-            Plus qu&apos;un simple script, nous rendons votre site{" "}
-            <u>accessible</u>.
+            Rendez votre site accessible en 5min.
           </Typography>
           <Typography
             variant="muted"
             className="m-auto max-w-lg text-center text-base"
           >
             Notre solution innovante transforme instantanément votre site web
-            pour le rendre conforme aux normes WCAG 2.1. Simple à intégrer et
-            efficace, elle offre une expérience utilisateur optimale pour tous,
-            y compris les personnes en situation de handicap.
+            pour le rendre conforme aux normes WCAG 2.1.
           </Typography>
         </div>
         {features.map((f, i) => {

@@ -1,11 +1,10 @@
 import { FeaturesSection } from "@/components/feature-section";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8">
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex justify-center">
+      <main className="flex flex-col gap-8 w-[60%]">
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
           <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
             <Image
@@ -65,10 +64,12 @@ export default function Home() {
               description:
                 "Ajoutez facilement votre domaine sur notre plateforme pour commencer à rendre votre site accessible.",
               component: (
-                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
-                  <img
+                <div className="flex items-center justify-center h-[200px] w-full">
+                  <Image
                     src="/gif/ajouter.gif"
                     alt="Ajouter un nom de domaine"
+                    width={400}
+                    height={200}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -80,10 +81,12 @@ export default function Home() {
               description:
                 "Notre plateforme génère un script unique adapté à votre site web.",
               component: (
-                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
-                  <img
+                <div className="flex items-center justify-center h-[200px] w-full">
+                  <Image
                     src="/gif/script.gif"
                     alt="Copier le script"
+                    width={400}
+                    height={200}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -95,10 +98,12 @@ export default function Home() {
               description:
                 "Intégrez simplement notre script dans le code source de votre site pour activer toutes les fonctionnalités d'accessibilité.",
               component: (
-                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
-                  <img
+                <div className="flex items-center justify-center h-[200px] w-full">
+                  <Image
                     src="/gif/code.gif"
                     alt="Ajouter le script dans le head"
+                    width={400}
+                    height={200}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -110,10 +115,12 @@ export default function Home() {
               description:
                 "Une fois installé, notre outil d'accessibilité est immédiatement opérationnel sur votre site, offrant une expérience inclusive à tous vos visiteurs.",
               component: (
-                <div className="flex items-center justify-center h-[200px] w-full overflow-hidden rounded-lg">
-                  <img
+                <div className="flex items-center justify-center h-[200px] w-full">
+                  <Image
                     src="/gif/site.gif"
                     alt="Résultat sur le site"
+                    width={400}
+                    height={200}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -122,9 +129,6 @@ export default function Home() {
           ]}
         />
       </main>
-      <footer className="flex gap-[24px] flex-wrap items-center justify-center p-8">
-        <Link href="/">Home</Link>
-      </footer>
     </div>
   );
 }
