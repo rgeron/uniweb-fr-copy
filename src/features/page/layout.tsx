@@ -1,11 +1,11 @@
+import { Typography } from "@/components/typography";
+import { cn } from "@/lib/utils";
 import type { ComponentPropsWithoutRef } from "react";
-import { Typography } from "../../components/nowts/typography";
-import { cn } from "../../lib/utils";
 
 export const Layout = (
   props: ComponentPropsWithoutRef<"div"> & {
     size?: "sm" | "default" | "lg";
-  },
+  }
 ) => {
   return (
     <div
@@ -16,7 +16,7 @@ export const Layout = (
           "max-w-7xl": props.size === "lg",
           "max-w-3xl": props.size === "sm",
         },
-        props.className,
+        props.className
       )}
     />
   );
@@ -28,7 +28,7 @@ export const LayoutHeader = (props: ComponentPropsWithoutRef<"div">) => {
       {...props}
       className={cn(
         "flex w-full min-w-[200px] flex-col items-start gap-2 md:flex-1",
-        props.className,
+        props.className
       )}
     />
   );
