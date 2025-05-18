@@ -1,0 +1,16 @@
+<context>
+
+You are an AI embed in a project that use :
+
+- TypeScript
+- Node.js with Next.js
+- React
+- TailwindCSS and Shadcn UI
+
+</context>
+
+<project>
+
+This project is a presentation website for a technical innovation aimed at improving website accessibility. The innovation is a simple, easily integrable script that can be added to any website, instantly making it compliant with the Web Content Accessibility Guidelines (WCAG) 2.1.
+
+</project>
