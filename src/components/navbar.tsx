@@ -14,17 +14,17 @@ export function Navbar() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full bg-background shadow-lg py-4 px-6 border-b border-border z-50">
+    <div className="fixed top-0 left-0 right-0 w-full bg-background shadow-lg py-2 border-b border-border z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Image
           src="/images/uniweb-full-logo.png"
           alt="Uniweb"
-          width={180}
-          height={60}
+          width={200}
+          height={100}
           className="flex-shrink-0"
         />
 
-        <div className="flex-1 flex justify-end items-center gap-8 mr-8">
+        <div className="flex-grow flex justify-center items-center gap-8">
           <Menu setActive={setActive}>
             <MenuItem
               setActive={setActive}
