@@ -101,52 +101,70 @@ function Navbar({ className }: { className?: string }) {
     <div
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/accessibilite">Accessibilité Web</HoveredLink>
-            <HoveredLink href="/conformite">Conformité WCAG</HoveredLink>
-            <HoveredLink href="/audit">Audit d&apos;Accessibilité</HoveredLink>
-            <HoveredLink href="/formation">Formation</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Produits">
-          <div className="text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Widget d'Accessibilité"
-              href="/widget"
-              src="/images/widget.webp"
-              description="Notre solution simple et efficace pour rendre votre site accessible."
-            />
-            <ProductItem
-              title="Audit Automatisé"
-              href="/audit-auto"
-              src="/images/audit.webp"
-              description="Analysez votre site et identifiez les problèmes d'accessibilité."
-            />
-            <ProductItem
-              title="Certification"
-              href="/certification"
-              src="/images/certification.webp"
-              description="Obtenez une certification officielle pour votre conformité WCAG."
-            />
-            <ProductItem
-              title="API d'Accessibilité"
-              href="/api"
-              src="/images/api.webp"
-              description="Intégrez nos fonctionnalités d'accessibilité via notre API."
-            />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Tarifs">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/starter">Starter</HoveredLink>
-            <HoveredLink href="/pro">Professionnel</HoveredLink>
-            <HoveredLink href="/entreprise">Entreprise</HoveredLink>
-            <HoveredLink href="/sur-mesure">Sur Mesure</HoveredLink>
-          </div>
-        </MenuItem>
-      </Menu>
+      <div className="flex items-center justify-between w-full">
+        <Image
+          src="/images/uniweb-full-logo.png"
+          alt="Uniweb"
+          width={120}
+          height={40}
+          className="mr-4"
+        />
+        <Menu setActive={setActive}>
+          <MenuItem setActive={setActive} active={active} item="Notre service">
+            <div className="text-sm grid grid-cols-2 gap-10 p-4">
+              <ProductItem
+                title="Que faisons-nous ?"
+                href="/que-faisons-nous"
+                src="/images/service/accessibilite.png"
+                description="Découvrez notre mission et notre approche pour améliorer l'accessibilité web."
+              />
+              <ProductItem
+                title="Fonctionnalités de l'outil"
+                href="/fonctionnalites"
+                src="/images/service/fonctionnalite.png"
+                description="Explorez les fonctionnalités de notre solution d'accessibilité web."
+              />
+              <ProductItem
+                title="Conformité WCAG et RGAA"
+                href="/conformite"
+                src="/images/service/wcag.png"
+                description="Notre solution respecte les normes internationales d'accessibilité."
+              />
+              <ProductItem
+                title="Engagement en matière de sécurité"
+                href="/securite"
+                src="/images/service/securite.png"
+                description="Nous garantissons la sécurité des données et le respect de la vie privée."
+              />
+            </div>
+          </MenuItem>
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Qui sommes-nous"
+          >
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/notre-histoire">Notre histoire</HoveredLink>
+              <HoveredLink href="/valeurs">Valeurs et engagement</HoveredLink>
+              <HoveredLink href="/blog">Blog</HoveredLink>
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Contact">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/renseignements">
+                Demande de renseignement
+              </HoveredLink>
+              <HoveredLink href="/devis">Demande de devis</HoveredLink>
+            </div>
+          </MenuItem>
+        </Menu>
+        <a
+          href="/essai-gratuit"
+          className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+        >
+          Essai gratuit
+        </a>
+      </div>
     </div>
   );
 }
