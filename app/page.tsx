@@ -1,10 +1,9 @@
-"use client";
 import { FeaturesSection } from "@/components/feature-section";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center">
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
       <main className="flex flex-col gap-8 pt-32 pb-16 w-full">
         <div className="w-[60%] mx-auto">
           <FeaturesSection

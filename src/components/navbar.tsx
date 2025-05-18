@@ -14,7 +14,7 @@ export function Navbar() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full bg-white shadow-lg py-4 px-6 border-b border-gray-200 z-50">
+    <div className="fixed top-0 left-0 right-0 w-full bg-background shadow-lg py-4 px-6 border-b border-border z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Image
           src="/images/uniweb-full-logo.png"
@@ -83,7 +83,7 @@ export function Navbar() {
 
         <a
           href="/essai-gratuit"
-          className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors text-base"
+          className="px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-base"
         >
           Essai gratuit
         </a>
