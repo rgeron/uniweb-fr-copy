@@ -6,6 +6,7 @@ import {
   MenuItem,
   ProductItem,
 } from "@/components/ui/navbar-menu";
+import { ThemeToggle } from "@/features/theme/theme-toggle";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -85,6 +86,7 @@ export function Navbar() {
         >
           Essai gratuit
         </a>
+        <ThemeToggle />
       </div>
     </div>
   );
