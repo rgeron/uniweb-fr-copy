@@ -78,6 +78,7 @@ export function Navbar() {
               </div>
             </MenuItem>
           </Menu>
+          <ThemeToggle />
         </div>
 
         <a
@@ -86,7 +87,6 @@ export function Navbar() {
         >
           Essai gratuit
         </a>
-        <ThemeToggle />
       </div>
     </div>
   );
