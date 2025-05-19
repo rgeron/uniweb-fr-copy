@@ -1,9 +1,13 @@
+import { FaqSection } from "@/components/blocks/faq";
 import { FeaturesSection } from "@/components/feature-section";
 import { HeroScroll } from "@/components/hero-scroll";
 import {
   BrandScroller,
   BrandScrollerReverse,
 } from "@/components/ui/brand-scoller";
+import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
+import { contactInfo, faqItems } from "@/content/FAQ_CONTACT_DATA";
+import { TESTIMONIALS } from "@/content/TESTIMONIALS";
 import Image from "next/image";
 
 export default function Home() {
@@ -93,6 +97,25 @@ export default function Home() {
             ]}
           />
         </div>
+
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            Ce que nos clients disent
+          </h2>
+          <TestimonialCarousel
+            testimonials={TESTIMONIALS}
+            companyLogoPath="/images/logo/"
+            avatarPath="/images/avatars/"
+          />
+        </div>
+
+        <FaqSection
+          title="Frequently Asked Questions"
+          description="Find answers to common questions about Uniweb and web accessibility."
+          items={faqItems}
+          contactInfo={contactInfo}
+          id="faq-section"
+        />
       </main>
     </div>
   );

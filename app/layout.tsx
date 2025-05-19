@@ -1,10 +1,8 @@
-import { FaqSection } from "@/components/blocks/faq";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FooterSection } from "@/components/ui/footer-section";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { contactInfo, faqItems } from "../content/FAQ_CONTACT_DATA";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,13 +40,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          <FaqSection
-            title="Frequently Asked Questions"
-            description="Find answers to common questions about Uniweb and web accessibility."
-            items={faqItems}
-            contactInfo={contactInfo}
-            id="faq-section"
-          />
+
           <FooterSection />
         </ThemeProvider>
       </body>

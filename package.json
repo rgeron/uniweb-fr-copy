@@ -17,6 +17,7 @@
     "@shikijs/rehype": "^3.4.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.12.1",
     "lucide-react": "^0.511.0",
     "markdown-to-jsx": "^7.7.6",
