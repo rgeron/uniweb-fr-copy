@@ -1,6 +1,6 @@
 import { FaqSection } from "@/components/blocks/faq";
 import { FeaturesSection } from "@/components/feature-section";
-import { HeroScroll } from "@/components/hero-scroll";
+import { ProjectExplanation } from "@/components/project-explanation";
 import {
   BrandScroller,
   BrandScrollerReverse,
@@ -13,8 +13,19 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
-      <HeroScroll />
-      <main className="flex flex-col gap-8 pt-32 pb-16 w-full">
+      {/* Hero Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center justify-center text-center">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+          Rendez vos sites web
+          <span className="text-6xl md:text-8xl lg:text-9xl font-extrabold block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
+            accessibles à tous
+          </span>
+        </h1>
+      </section>
+
+      <ProjectExplanation />
+
+      <main className="flex flex-col gap-8 pt-8 pb-16 w-full">
         <div className="flex flex-col gap-6 items-center justify-center py-8">
           <BrandScroller />
           <BrandScrollerReverse />
