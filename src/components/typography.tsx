@@ -7,8 +7,8 @@ import type { ComponentPropsWithRef, ElementType, ForwardedRef } from "react";
 import React, { forwardRef } from "react";
 
 // Source : https://www.totaltypescript.com/pass-component-as-prop-react
-type FixedForwardRef = <T, P = {}>(
-  render: (props: P, ref: React.Ref<T>) => React.ReactNode,
+type FixedForwardRef = <T, P = Record<string, unknown>>(
+  render: (props: P, ref: React.Ref<T>) => React.ReactNode
 ) => (props: P & React.RefAttributes<T>) => React.ReactNode;
 
 const fixedForwardRef = forwardRef as FixedForwardRef;
@@ -80,7 +80,7 @@ type ElementTypeForVariant<TVariant extends keyof ElementMapping> =
  */
 const InnerTypography = <
   TAs extends ElementType,
-  TVariant extends TypographyCvaProps["variant"] = "default",
+  TVariant extends TypographyCvaProps["variant"] = "default"
 >(
   {
     variant = "default",
@@ -98,7 +98,7 @@ const InnerTypography = <
     >,
     "as"
   >,
-  ref: ForwardedRef<any>,
+  ref: ForwardedRef<any>
 ) => {
   const Comp = as ?? defaultElementMapping[variant ?? "default"];
   return (

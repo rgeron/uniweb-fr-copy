@@ -21,17 +21,14 @@ const keyboardShortcutVariants = cva(
     defaultVariants: {
       size: "default",
     },
-  },
+  }
 );
 export type KeyboardShortcutProps = ComponentProps<"kbd"> &
-  VariantProps<typeof keyboardShortcutVariants> & {
-    eventKey?: string;
-  };
+  VariantProps<typeof keyboardShortcutVariants>;
 
 export const KeyboardShortcut = ({
   children,
   size,
-  eventKey,
   ref,
   ...props
 }: KeyboardShortcutProps) => {
@@ -43,7 +40,7 @@ export const KeyboardShortcut = ({
         keyboardShortcutVariants({
           size,
           className: props.className,
-        }),
+        })
       )}
     >
       {children}
