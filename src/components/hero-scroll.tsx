@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export function HeroScroll() {
   return (
-    <div className="flex flex-col overflow-hidden -mt-24">
+    <div className="flex flex-col overflow-hidden -mt-12 md:-mt-24">
       <ContainerScroll
         titleComponent={
           <>
             <h1 className="text-3xl font-medium text-black dark:text-white">
               Rendez vos sites web
-              <span className="text-4xl md:text-[6.5rem] font-bold -mb-16 leading-none block">
+              <span className="text-4xl md:text-[6.5rem] font-bold -mb-8 md:-mb-16 leading-none block">
                 accessibles à tous
               </span>
             </h1>
