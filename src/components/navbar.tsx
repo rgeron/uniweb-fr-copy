@@ -84,7 +84,6 @@ export function Navbar() {
               </div>
             </MenuItem>
           </Menu>
-          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-4">

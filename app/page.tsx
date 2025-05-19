@@ -1,5 +1,9 @@
 import { FeaturesSection } from "@/components/feature-section";
 import { HeroScroll } from "@/components/hero-scroll";
+import {
+  BrandScroller,
+  BrandScrollerReverse,
+} from "@/components/ui/brand-scoller";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +11,10 @@ export default function Home() {
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
       <HeroScroll />
       <main className="flex flex-col gap-8 pt-32 pb-16 w-full">
+        <div className="flex flex-col gap-6 items-center justify-center py-8">
+          <BrandScroller />
+          <BrandScrollerReverse />
+        </div>
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <FeaturesSection
             features={[
