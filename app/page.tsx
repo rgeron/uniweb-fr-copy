@@ -109,13 +109,15 @@ export default function Home() {
           />
         </div>
 
-        <FaqSection
-          title="Frequently Asked Questions"
-          description="Find answers to common questions about Uniweb and web accessibility."
-          items={faqItems}
-          contactInfo={contactInfo}
-          id="faq-section"
-        />
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <FaqSection
+            title="Frequently Asked Questions"
+            description="Find answers to common questions about Uniweb and web accessibility."
+            items={faqItems}
+            contactInfo={contactInfo}
+            id="faq-section"
+          />
+        </div>
       </main>
     </div>
   );
