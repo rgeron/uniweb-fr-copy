@@ -1,28 +1,29 @@
 export const faqItems = [
   {
-    question: "What is Uniweb?",
+    question: "Qu'est-ce que Uniweb ?",
     answer:
-      "Uniweb is a revolutionary script that makes any website WCAG 2.1 compliant instantly.",
+      "Uniweb est un script révolutionnaire qui rend n'importe quel site web conforme aux normes WCAG 2.1 instantanément.",
   },
   {
-    question: "How easy is it to integrate Uniweb?",
+    question: "Est-il facile d'intégrer Uniweb ?",
     answer:
-      "It's incredibly simple. Just add a single script tag to your website's HTML.",
+      "C'est incroyablement simple. Il suffit d'ajouter une seule balise de script au HTML de votre site web.",
   },
   {
-    question: "Is Uniweb expensive?",
+    question: "Uniweb est-il cher ?",
     answer:
-      "We offer various pricing plans to suit different needs, including a free tier for small projects.",
+      "Nous proposons différents plans tarifaires pour répondre à des besoins variés, y compris un niveau gratuit pour les petits projets.",
   },
   {
-    question: "Does Uniweb affect website performance?",
+    question: "Uniweb affecte-t-il les performances du site web ?",
     answer:
-      "Uniweb is designed to be lightweight and has minimal impact on your website's performance.",
+      "Uniweb est conçu pour être léger et avoir un impact minimal sur les performances de votre site web.",
   },
 ];
 
 export const contactInfo = {
-  title: "Still have questions?",
-  description: "Our team is here to help you with any inquiries you may have.",
-  buttonText: "Contact Us",
+  title: "Vous avez encore des questions ?",
+  description:
+    "Notre équipe est là pour vous aider avec toutes les demandes que vous pourriez avoir.",
+  buttonText: "Contactez-nous",
 };
