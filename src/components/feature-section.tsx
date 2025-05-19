@@ -13,10 +13,10 @@ export const FeaturesSection = ({
 }) => {
   return (
     <div
-      className="container mx-auto px-4 py-12 md:py-24 relative"
+      className="container mx-auto px-4 py-8 md:py-12 lg:py-24 relative"
       id="features"
     >
-      <div className="relative flex flex-col gap-8 lg:gap-16">
+      <div className="relative flex flex-col gap-6 md:gap-8 lg:gap-16">
         <div className="flex flex-col items-center gap-2">
           <Badge>Comment ça marche ?</Badge>
           <Typography variant="h2" className="m-auto max-w-xl text-center">
@@ -55,7 +55,7 @@ type FeatureLineProps = {
 
 const FeatureLine = (props: FeatureLineProps) => {
   return (
-    <div className="flex items-center gap-6 odd:flex-row-reverse max-lg:!flex-col">
+    <div className="flex flex-col lg:items-center gap-6 lg:odd:flex-row-reverse lg:even:flex-row">
       <div className="flex flex-1 flex-col items-start gap-2">
         <Badge color="pink">{props.badge}</Badge>
         <Typography variant="h3" className="">
@@ -65,7 +65,7 @@ const FeatureLine = (props: FeatureLineProps) => {
           {props.description}
         </ClientMarkdown>
       </div>
-      <div className="w-full max-w-sm">
+      <div className="w-full mx-auto max-w-xs sm:max-w-sm">
         <DotPattern>{props.component}</DotPattern>
       </div>
     </div>

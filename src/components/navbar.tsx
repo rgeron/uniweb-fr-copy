@@ -7,24 +7,30 @@ import {
   ProductItem,
 } from "@/components/ui/navbar-menu";
 import { ThemeToggle } from "@/features/theme/theme-toggle";
+import { Menu as MenuIcon, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export function Navbar() {
   const [active, setActive] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 right-0 w-full bg-background shadow-lg py-2 border-b border-border z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Image
-          src="/images/uniweb-full-logo.png"
-          alt="Uniweb"
-          width={200}
-          height={100}
-          className="flex-shrink-0"
-        />
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+        <Link href="/">
+          <Image
+            src="/images/uniweb-full-logo.png"
+            alt="Uniweb"
+            width={150}
+            height={75}
+            className="flex-shrink-0"
+          />
+        </Link>
 
-        <div className="flex-grow flex justify-center items-center gap-8">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex flex-grow justify-center items-center gap-8">
           <Menu setActive={setActive}>
             <MenuItem
               setActive={setActive}
@@ -81,13 +87,119 @@ export function Navbar() {
           <ThemeToggle />
         </div>
 
-        <a
-          href="/essai-gratuit"
-          className="px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-base"
-        >
-          Essai gratuit
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="/essai-gratuit"
+            className="px-4 py-2 md:px-6 md:py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-sm md:text-base"
+          >
+            Essai gratuit
+          </a>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <MenuIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-background border-t border-border py-4">
+          <div className="flex flex-col space-y-4 px-4">
+            <div className="border-b border-border pb-3">
+              <p className="font-medium mb-2">Notre service</p>
+              <div className="flex flex-col space-y-2 pl-2">
+                <Link
+                  href="/que-faisons-nous"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Que faisons-nous ?
+                </Link>
+                <Link
+                  href="/fonctionnalites"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Fonctionnalités de l'outil
+                </Link>
+                <Link
+                  href="/conformite"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Conformité WCAG et RGAA
+                </Link>
+                <Link
+                  href="/securite"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Engagement en matière de sécurité
+                </Link>
+              </div>
+            </div>
+
+            <div className="border-b border-border pb-3">
+              <p className="font-medium mb-2">Qui sommes-nous</p>
+              <div className="flex flex-col space-y-2 pl-2">
+                <Link
+                  href="/notre-histoire"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Notre histoire
+                </Link>
+                <Link
+                  href="/valeurs"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Valeurs et engagement
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+              </div>
+            </div>
+
+            <div className="border-b border-border pb-3">
+              <p className="font-medium mb-2">Contact</p>
+              <div className="flex flex-col space-y-2 pl-2">
+                <Link
+                  href="/renseignements"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Demande de renseignement
+                </Link>
+                <Link
+                  href="/devis"
+                  className="text-sm text-muted-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Demande de devis
+                </Link>
+              </div>
+            </div>
+
+            <div className="pt-2 flex justify-center">
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

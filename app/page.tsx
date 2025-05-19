@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
       <HeroScroll />
       <main className="flex flex-col gap-8 pt-32 pb-16 w-full">
-        <div className="w-[60%] mx-auto">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <FeaturesSection
             features={[
               {
@@ -23,6 +23,7 @@ export default function Home() {
                       width={400}
                       height={200}
                       className="h-full w-full object-cover"
+                      unoptimized
                     />
                   </div>
                 ),
@@ -40,6 +41,7 @@ export default function Home() {
                       width={400}
                       height={200}
                       className="h-full w-full object-cover"
+                      unoptimized
                     />
                   </div>
                 ),
@@ -57,6 +59,7 @@ export default function Home() {
                       width={400}
                       height={200}
                       className="h-full w-full object-cover"
+                      unoptimized
                     />
                   </div>
                 ),
@@ -74,6 +77,7 @@ export default function Home() {
                       width={400}
                       height={200}
                       className="h-full w-full object-cover"
+                      unoptimized
                     />
                   </div>
                 ),
