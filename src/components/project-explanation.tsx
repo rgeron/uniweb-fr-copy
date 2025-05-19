@@ -16,7 +16,7 @@ export function ProjectExplanation() {
           <MainInfoCard
             title="facile à voir"
             features={[
-              { text: "augmenter la taille du texte" },
+              { text: "augmente la taille du texte" },
               { text: "ajuste les couleurs" },
               { text: "aide à la concentration" },
             ]}

@@ -29,13 +29,13 @@ export function MainInfoCard(props: MainInfoCardProps) {
           {props.features.map((feature, index) => (
             <React.Fragment key={index}>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 rounded-full border border-border bg-background p-1.5">
-                  <Check className="h-5 w-5 text-primary" />
+                <div className="flex-shrink-0 bg-background p-1.5">
+                  <Check className="h-6 w-6 text-primary" />
                 </div>
-                <span className="text-foreground">{feature.text}</span>
+                <span className="text-foreground text-lg">{feature.text}</span>
               </div>
               {index < props.features.length - 1 && (
-                <Separator className="bg-muted" />
+                <Separator className="bg-muted " />
               )}
             </React.Fragment>
           ))}
