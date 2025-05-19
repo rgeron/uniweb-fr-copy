@@ -128,7 +128,7 @@ export function Navbar() {
                   className="text-sm text-muted-foreground"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Fonctionnalités de l'outil
+                  Fonctionnalités de l&apos;outil
                 </Link>
                 <Link
                   href="/conformite"
