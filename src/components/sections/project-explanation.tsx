@@ -17,7 +17,7 @@ export function ProjectExplanation() {
       title: "Facile à mettre en place POUR VOUS",
       description: "Ajouter un seul script à votre site web.",
       videoSrc: "/videos/easy-to-implement.mov",
-      learnMoreLink: "/features/easy-to-implement",
+      learnMoreLink: "/point-de-vue-client",
       storageKey: "info-card-easy-to-implement",
       className: "",
     },
@@ -25,7 +25,7 @@ export function ProjectExplanation() {
       title: "Facile à utiliser POUR TOUS",
       description: "Votre site web reste le même, mais accessible à tous.",
       videoSrc: "/videos/easy-to-use.mov",
-      learnMoreLink: "/features/easy-to-use",
+      learnMoreLink: "/point-de-vue-utilisateur",
       storageKey: "info-card-easy-to-use",
       className: "",
     },
@@ -33,7 +33,7 @@ export function ProjectExplanation() {
       title: "Respecte les critères RGAA",
       description: "Conforme aux critères RGAA 4.1",
       videoSrc: "/videos/rgpa-compliant.mov",
-      learnMoreLink: "/features/rgpa-compliant",
+      learnMoreLink: "/rgaa",
       storageKey: "info-card-rgpa-compliant",
       className: "",
     },
@@ -78,7 +78,7 @@ export function ProjectExplanation() {
                   href={card.learnMoreLink}
                   className="text-xs flex flex-row items-center gap-1 text-primary hover:underline"
                 >
-                  Learn more <ExternalLink size={12} />
+                  Voir plus <ExternalLink size={12} />
                 </Link>
               </InfoCardAction>
             </InfoCardFooter>
