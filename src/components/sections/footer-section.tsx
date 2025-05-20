@@ -1,19 +1,23 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { SectionLayout } from "@/features/section-layout";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import * as React from "react";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { SectionLayout } from "@/features/section-layout";
+
+import { Button } from "@/components/ui/button";
+
 import { Facebook, Linkedin, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import Link from "next/link";
-import * as React from "react";
+
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 export function FooterSection() {
   const { theme, setTheme } = useTheme();
@@ -41,6 +45,63 @@ export function FooterSection() {
               <p>Téléphone: (123) 456-7890</p>
               <p>Email: hello@example.com</p>
             </address>
+
+            <h3 className="mt-6 mb-4 text-lg font-semibold">
+              ...et suivez-nous
+            </h3>
+            <div className="mb-6 flex space-x-4">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
+                      <Facebook className="h-4 w-4" />
+                      <span className="sr-only">Facebook</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Suivez-nous sur Facebook</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      <span className="sr-only">LinkedIn</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Connectez-vous sur LinkedIn</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+            {hasMounted && (
+              <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4" />
+                <Switch
+                  id="dark-mode"
+                  checked={theme === "dark"}
+                  onCheckedChange={(checked) =>
+                    setTheme(checked ? "dark" : "light")
+                  }
+                />
+                <Moon className="h-4 w-4" />
+                <Label htmlFor="dark-mode" className="sr-only">
+                  Toggle dark mode
+                </Label>
+              </div>
+            )}
 
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
@@ -124,62 +185,7 @@ export function FooterSection() {
               </Link>
             </nav>
           </div>
-          <div className="relative">
-            <h3 className="mt-6 mb-4 text-lg font-semibold">Suivez-nous</h3>
-            <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Facebook className="h-4 w-4" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Suivez-nous sur Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connectez-vous sur LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-            {hasMounted && (
-              <div className="flex items-center space-x-2">
-                <Sun className="h-4 w-4" />
-                <Switch
-                  id="dark-mode"
-                  checked={theme === "dark"}
-                  onCheckedChange={(checked) =>
-                    setTheme(checked ? "dark" : "light")
-                  }
-                />
-                <Moon className="h-4 w-4" />
-                <Label htmlFor="dark-mode" className="sr-only">
-                  Toggle dark mode
-                </Label>
-              </div>
-            )}
-          </div>
+          <div className="relative"></div>
         </div>
       </SectionLayout>
       <div className="bg-muted text-muted-foreground py-6">
@@ -193,7 +199,7 @@ export function FooterSection() {
                 Politique de confidentialité
               </a>
               <a href="#" className="transition-colors hover:text-primary">
-                Conditions d'utilisation
+                Conditions d&apos;utilisation
               </a>
               <a href="#" className="transition-colors hover:text-primary">
                 Paramètres des cookies
