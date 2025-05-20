@@ -19,19 +19,16 @@ import {
   Sun,
   Twitter,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import * as React from "react";
 
 function FooterSection() {
-  const [isDarkMode, setIsDarkMode] = React.useState(true);
-  const [isChatOpen, setIsChatOpen] = React.useState(false);
+  const { theme, setTheme } = useTheme();
+  const [hasMounted, setHasMounted] = React.useState(false);
 
   React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
+    setHasMounted(true);
+  }, []);
 
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
@@ -177,18 +174,22 @@ function FooterSection() {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
-              <Switch
-                id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-              />
-              <Moon className="h-4 w-4" />
-              <Label htmlFor="dark-mode" className="sr-only">
-                Toggle dark mode
-              </Label>
-            </div>
+            {hasMounted && (
+              <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4" />
+                <Switch
+                  id="dark-mode"
+                  checked={theme === "dark"}
+                  onCheckedChange={(checked) =>
+                    setTheme(checked ? "dark" : "light")
+                  }
+                />
+                <Moon className="h-4 w-4" />
+                <Label htmlFor="dark-mode" className="sr-only">
+                  Toggle dark mode
+                </Label>
+              </div>
+            )}
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">

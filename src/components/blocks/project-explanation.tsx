@@ -1,4 +1,4 @@
-import { MainInfoCard } from "./main-info-card";
+import { MainInfoCard } from "../main-info-card";
 
 export function ProjectExplanation() {
   return (

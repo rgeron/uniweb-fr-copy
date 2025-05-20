@@ -1,10 +1,11 @@
 import { FaqSection } from "@/components/blocks/faq";
-import { FeaturesSection } from "@/components/feature-section";
-import { ProjectExplanation } from "@/components/project-explanation";
+import { FeaturesSection } from "@/components/blocks/feature-section";
+import { ProjectExplanation } from "@/components/blocks/project-explanation";
 import {
   BrandScroller,
   BrandScrollerReverse,
 } from "@/components/ui/brand-scoller";
+import { HeroArrow } from "@/components/blocks/hero-arrow";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { contactInfo, faqItems } from "@/content/FAQ_CONTACT_DATA";
 import { TESTIMONIALS } from "@/content/TESTIMONIALS";
@@ -14,14 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
       {/* Hero Section */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-          Rendez vos sites web
-          <span className="text-6xl md:text-8xl lg:text-9xl font-extrabold block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
-            accessibles à tous
-          </span>
-        </h1>
-      </section>
+      <HeroArrow />
 
       <ProjectExplanation />
 
