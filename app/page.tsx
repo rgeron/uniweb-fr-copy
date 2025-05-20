@@ -2,6 +2,7 @@ import { FaqSection } from "@/components/sections/faq";
 import { FeaturesSection } from "@/components/sections/feature-section";
 import { HeroArrow } from "@/components/sections/hero-arrow";
 import { ProjectExplanation } from "@/components/sections/project-explanation";
+import { StatsSection } from "@/components/sections/stats-section";
 import {
   BrandScroller,
   BrandScrollerReverse,
@@ -19,6 +20,8 @@ export default function Home() {
         <HeroArrow />
 
         <ProjectExplanation />
+
+        <StatsSection />
 
         <div className="flex flex-col gap-6 items-center justify-center py-8 mt-8">
           <BrandScroller />
