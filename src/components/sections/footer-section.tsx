@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -11,16 +10,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { SectionLayout } from "@/features/section-layout";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Moon,
-  Send,
-  Sun,
-  Twitter,
-} from "lucide-react";
+import { Facebook, Linkedin, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import * as React from "react";
 
 export function FooterSection() {
@@ -41,74 +33,99 @@ export function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="relative">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">
-              Stay Connected
+              Contactez-nous
             </h2>
-            <p className="mb-6 text-muted-foreground">
-              Join our newsletter for the latest updates and exclusive offers.
-            </p>
-            <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button>
-            </form>
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
-          </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <nav className="space-y-2 text-sm">
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                About Us
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Services
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Products
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic">
               <p>123 Innovation Street</p>
               <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
+              <p>Téléphone: (123) 456-7890</p>
               <p>Email: hello@example.com</p>
             </address>
+
+            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+          </div>
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Qui sommes-nous ?</h3>
+            <nav className="space-y-2 text-sm">
+              <Link
+                href="/notre-engagement"
+                className="block transition-colors hover:text-primary"
+              >
+                Notre engagement
+              </Link>
+              <Link
+                href="/notre-histoire"
+                className="block transition-colors hover:text-primary"
+              >
+                Notre histoire
+              </Link>
+              <Link
+                href="/nos-partenaires"
+                className="block transition-colors hover:text-primary"
+              >
+                Nos partenaires
+              </Link>
+              <Link
+                href="/blog"
+                className="block transition-colors hover:text-primary"
+              >
+                Nos articles
+              </Link>
+            </nav>
+
+            <h3 className="mt-6 mb-4 text-lg font-semibold">Liens rapides</h3>
+            <nav className="space-y-2 text-sm">
+              <Link
+                href="/rgaa"
+                className="block transition-colors hover:text-primary"
+              >
+                RGAA
+              </Link>
+              <Link
+                href="/tarifs"
+                className="block transition-colors hover:text-primary"
+              >
+                Les tarifs
+              </Link>
+              <Link
+                href="/essai-gratuit"
+                className="block transition-colors hover:text-primary"
+              >
+                30 jours gratuit
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Que faisons-nous ?</h3>
+            <nav className="space-y-2 text-sm">
+              <Link
+                href="/comment-ca-marche"
+                className="block transition-colors hover:text-primary"
+              >
+                Comment ça marche ?
+              </Link>
+              <Link
+                href="/securite"
+                className="block transition-colors hover:text-primary"
+              >
+                Sécurité des données
+              </Link>
+              <Link
+                href="/point-de-vue-client"
+                className="block transition-colors hover:text-primary"
+              >
+                Point de vue client
+              </Link>
+              <Link
+                href="/point-de-vue-utilisateur"
+                className="block transition-colors hover:text-primary"
+              >
+                Point de vue utilisateur
+              </Link>
+            </nav>
           </div>
           <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
+            <h3 className="mt-6 mb-4 text-lg font-semibold">Suivez-nous</h3>
             <div className="mb-6 flex space-x-4">
               <TooltipProvider>
                 <Tooltip>
@@ -123,44 +140,11 @@ export function FooterSection() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Follow us on Facebook</p>
+                    <p>Suivez-nous sur Facebook</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Twitter className="h-4 w-4" />
-                      <span className="sr-only">Twitter</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -174,7 +158,7 @@ export function FooterSection() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Connect with us on LinkedIn</p>
+                    <p>Connectez-vous sur LinkedIn</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -202,17 +186,17 @@ export function FooterSection() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-center md:flex-row md:pt-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 Your Company. All rights reserved.
+              © 2024 Uniweb. Tous droits réservés.
             </p>
             <nav className="flex gap-4 text-sm">
               <a href="#" className="transition-colors hover:text-primary">
-                Privacy Policy
+                Politique de confidentialité
               </a>
               <a href="#" className="transition-colors hover:text-primary">
-                Terms of Service
+                Conditions d'utilisation
               </a>
               <a href="#" className="transition-colors hover:text-primary">
-                Cookie Settings
+                Paramètres des cookies
               </a>
             </nav>
           </div>

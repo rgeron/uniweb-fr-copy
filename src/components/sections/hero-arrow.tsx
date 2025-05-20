@@ -53,10 +53,10 @@ export function HeroArrow() {
           />
 
           <div
-            className="absolute border-4 border-blue-600 bg-transparent w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28 transition-opacity duration-200 ease-out
-              sm:right-[10%] sm:top-[120%] 
-              lg:right-[5%] lg:top-[80%]
-              right-[0%] top-[110%]"
+            className="absolute border-6 md:border-8 lg:border-10 rounded-2xl border-blue-600 bg-transparent w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 transition-opacity duration-200 ease-out
+              sm:right-[5%] sm:top-[120%] 
+              lg:right-[2%] lg:top-[80%]
+              right-[-5%] top-[110%]"
             style={{ opacity: opacity }}
             aria-hidden="true"
           />
