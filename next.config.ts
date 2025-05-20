@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "sdk.hellouniweb.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   /* config options here */

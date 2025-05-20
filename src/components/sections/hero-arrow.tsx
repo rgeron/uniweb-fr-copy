@@ -11,7 +11,7 @@ export function HeroArrow() {
       // Start fading out immediately when scrolling begins
       // Fully disappear by 150px of scroll
       const scrollY = window.scrollY;
-      const newOpacity = Math.max(0, 1 - scrollY / 150);
+      const newOpacity = Math.max(0, 1 - scrollY);
       setOpacity(newOpacity);
     };
 
