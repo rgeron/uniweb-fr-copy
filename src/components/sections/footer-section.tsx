@@ -176,12 +176,6 @@ export function FooterSection() {
               >
                 Les tarifs
               </Link>
-              <Link
-                href="/essai-gratuit"
-                className="block transition-colors hover:text-primary"
-              >
-                30 jours gratuit
-              </Link>
             </nav>
           </div>
         </div>
