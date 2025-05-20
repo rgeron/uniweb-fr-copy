@@ -9,6 +9,7 @@ import {
   InfoCardTitle,
 } from "@/components/ui/info-card";
 import { SectionLayout } from "@/features/section-layout";
+import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -49,9 +50,15 @@ export function ProjectExplanation() {
       className="relative z-10 -mt-16 md:-mt-24 pt-20 md:pt-32"
       containerClassName="relative"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-center justify-items-center">
         {cardData.map((card) => (
-          <InfoCard key={card.title} className={card.className}>
+          <InfoCard
+            key={card.title}
+            className={cn(
+              "w-full max-w-[310px] sm:max-w-[320px] md:max-w-full",
+              card.className
+            )}
+          >
             <InfoCardContent>
               <InfoCardTitle className="text-xl font-semibold mb-2">
                 {card.title}
@@ -73,7 +80,7 @@ export function ProjectExplanation() {
                 expandHeight={200}
               />
             </InfoCardContent>
-            <InfoCardFooter className="mt-6 flex ">
+            <InfoCardFooter className="mt-2 sm:mt-0 md:mt-16 lg:mt-5 xl:mt-6 flex">
               <InfoCardAction>
                 <Link href={card.learnMoreLink} className="w-full">
                   <Button
