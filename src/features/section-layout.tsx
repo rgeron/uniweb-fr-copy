@@ -7,8 +7,9 @@ type SectionLayoutProps = {
    * sm = 896px
    * base = 1024px
    * lg = 1152px
+   * xl = 1280px
    */
-  size?: "sm" | "base" | "lg";
+  size?: "sm" | "base" | "lg" | "xl";
   /**
    * The variant of the section.
    * default = default background and foreground
@@ -43,7 +44,7 @@ export const SectionLayout = ({
           "text-foreground backdrop-blur-sm backdrop-brightness-75":
             variant === "image",
         },
-        containerClassName,
+        containerClassName
       )}
       {...props}
     >
@@ -54,8 +55,9 @@ export const SectionLayout = ({
             "max-w-4xl": size === "sm",
             "max-w-5xl": size === "base",
             "max-w-6xl": size === "lg",
+            "max-w-7xl": size === "xl",
           },
-          className,
+          className
         )}
       >
         {children}

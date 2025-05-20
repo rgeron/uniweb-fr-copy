@@ -38,19 +38,18 @@ export function ProjectExplanation() {
         "https://videos.pexels.com/video-files/7578539/7578539-hd_1280_720_30fps.mp4",
       learnMoreLink: "/features/standards-compliant",
       storageKey: "info-card-standards-compliant",
-      className:
-        "md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md lg:mx-0 lg:max-w-none",
+      className: "",
     },
   ];
 
   return (
     <SectionLayout
       id="project-explanation"
-      size="base"
+      size="xl"
       variant="default"
       aria-labelledby="project-explanation-title"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-center">
         {cardData.map((card) => (
           <InfoCard key={card.title} className={card.className}>
             <InfoCardContent>
@@ -70,8 +69,8 @@ export function ProjectExplanation() {
                     muted: true,
                   },
                 ]}
-                shrinkHeight={150}
-                expandHeight={250}
+                shrinkHeight={120}
+                expandHeight={200}
               />
             </InfoCardContent>
             <InfoCardFooter className="mt-3">

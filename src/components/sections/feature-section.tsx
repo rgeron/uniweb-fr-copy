@@ -37,7 +37,7 @@ export function FeaturesSection(props: FeaturesSectionProps) {
         </Typography>
       </div>
       <div className="relative flex flex-col gap-6 md:gap-8 lg:gap-16">
-        {features.map((f, i) => {
+        {features.map((f: FeatureLineProps, i: number) => {
           return (
             <FeatureLine
               key={i}
