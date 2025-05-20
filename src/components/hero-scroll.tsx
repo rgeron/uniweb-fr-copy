@@ -11,7 +11,7 @@ export function HeroScroll() {
             <h1 className="text-3xl font-medium text-black dark:text-white">
               Rendez vos sites web
               <span className="text-4xl md:text-[6.5rem] font-bold -mb-8 md:-mb-16 leading-none block">
-                accessibles à tous
+                Accessibles à tous
               </span>
             </h1>
           </>

@@ -48,7 +48,9 @@ export function StatsSection() {
   return (
     <SectionLayout size="lg">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold">Pourquoi c&apos;est important</h2>
+        <h2 className="text-3xl font-bold">
+          Quelques chiffres sur le handicap en France
+        </h2>
       </div>
       <div className="grid w-full items-center gap-12 sm:grid-cols-2 md:-mx-5 md:max-w-none md:grid-cols-3 lg:grid-cols-5 md:gap-8">
         {stats.map((stat, index) => (

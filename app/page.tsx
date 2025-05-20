@@ -108,7 +108,7 @@ export default function Home() {
 
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-8">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Ce que nos clients disent
+            Ce que nos clients disent de nous
           </h2>
           <TestimonialCarousel testimonials={TESTIMONIALS} />
         </div>
