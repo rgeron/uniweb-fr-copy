@@ -1,10 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import React, {
   createContext,
-  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -52,16 +51,10 @@ interface CommonCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 interface InfoCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  storageKey?: string;
-  dismissType?: "once" | "forever";
 }
 
 type InfoCardContentProps = CommonCardProps;
 type InfoCardFooterProps = CommonCardProps;
-type InfoCardDismissProps = React.HTMLAttributes<HTMLDivElement> & {
-  children: React.ReactNode;
-  onDismiss?: () => void;
-};
 type InfoCardActionProps = CommonCardProps;
 
 const InfoCardContent = React.memo(
@@ -100,39 +93,13 @@ const InfoCardImageContext = createContext<{
 
 const InfoCardContext = createContext<{
   isHovered: boolean;
-  onDismiss: () => void;
 }>({
   isHovered: false,
-  onDismiss: () => {},
 });
 
-function InfoCard({
-  children,
-  className,
-  storageKey,
-  dismissType = "once",
-}: InfoCardProps) {
-  if (dismissType === "forever" && !storageKey) {
-    throw new Error(
-      'A storageKey must be provided when using dismissType="forever"'
-    );
-  }
-
+function InfoCard({ children, className }: InfoCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [allImagesLoaded, setAllImagesLoaded] = useState(true);
-  const [isDismissed, setIsDismissed] = useState(() => {
-    if (typeof window === "undefined" || dismissType === "once") return false;
-    return dismissType === "forever"
-      ? localStorage.getItem(storageKey!) === "dismissed"
-      : false;
-  });
-
-  const handleDismiss = useCallback(() => {
-    setIsDismissed(true);
-    if (dismissType === "forever") {
-      localStorage.setItem(storageKey!, "dismissed");
-    }
-  }, [storageKey, dismissType]);
 
   const imageContextValue = useMemo(
     () => ({
@@ -145,36 +112,31 @@ function InfoCard({
   const cardContextValue = useMemo(
     () => ({
       isHovered,
-      onDismiss: handleDismiss,
     }),
-    [isHovered, handleDismiss]
+    [isHovered]
   );
 
   return (
     <InfoCardContext.Provider value={cardContextValue}>
       <InfoCardImageContext.Provider value={imageContextValue}>
-        <AnimatePresence>
-          {!isDismissed && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{
-                opacity: allImagesLoaded ? 1 : 0,
-                y: allImagesLoaded ? 0 : 10,
-              }}
-              exit={{
-                opacity: 0,
-                y: 10,
-                transition: { duration: 0.2 },
-              }}
-              transition={{ duration: 0.3, delay: 0 }}
-              className={cn("group rounded-lg border bg-white p-3", className)}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              {children}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{
+            opacity: 1,
+            y: allImagesLoaded ? 0 : 10,
+          }}
+          exit={{
+            opacity: 0,
+            y: 10,
+            transition: { duration: 0.2 },
+          }}
+          transition={{ duration: 0.3, delay: 0 }}
+          className={cn("group rounded-lg border bg-white p-3", className)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {children}
+        </motion.div>
       </InfoCardImageContext.Provider>
     </InfoCardContext.Provider>
   );
@@ -205,29 +167,6 @@ const InfoCardFooter = ({ children, className }: InfoCardFooterProps) => {
     </motion.div>
   );
 };
-
-const InfoCardDismiss = React.memo(
-  ({ children, className, onDismiss, ...props }: InfoCardDismissProps) => {
-    const { onDismiss: contextDismiss } = useContext(InfoCardContext);
-
-    const handleClick = (e: React.MouseEvent) => {
-      e.preventDefault();
-      onDismiss?.();
-      contextDismiss();
-    };
-
-    return (
-      <div
-        className={cn("cursor-pointer", className)}
-        onClick={handleClick}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  }
-);
-InfoCardDismiss.displayName = "InfoCardDismiss";
 
 const InfoCardAction = React.memo(
   ({ children, className, ...props }: InfoCardActionProps) => {
@@ -429,7 +368,6 @@ export {
   InfoCardAction,
   InfoCardContent,
   InfoCardDescription,
-  InfoCardDismiss,
   InfoCardFooter,
   InfoCardMedia,
   InfoCardTitle,

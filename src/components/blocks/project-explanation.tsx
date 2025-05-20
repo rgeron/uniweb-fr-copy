@@ -3,7 +3,6 @@ import {
   InfoCardAction,
   InfoCardContent,
   InfoCardDescription,
-  InfoCardDismiss,
   InfoCardFooter,
   InfoCardMedia,
   InfoCardTitle,
@@ -48,12 +47,7 @@ export function ProjectExplanation() {
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {cardData.map((card) => (
-            <InfoCard
-              key={card.title}
-              className={card.className}
-              storageKey={card.storageKey}
-              dismissType="forever"
-            >
+            <InfoCard key={card.title} className={card.className}>
               <InfoCardContent>
                 <InfoCardTitle className="text-xl font-semibold mb-2">
                   {card.title}
@@ -76,9 +70,6 @@ export function ProjectExplanation() {
                 />
               </InfoCardContent>
               <InfoCardFooter className="mt-3">
-                <InfoCardDismiss className="text-xs hover:underline cursor-pointer">
-                  Dismiss
-                </InfoCardDismiss>
                 <InfoCardAction>
                   <Link
                     href={card.learnMoreLink}
