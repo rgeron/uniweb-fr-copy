@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   InfoCard,
   InfoCardAction,
@@ -72,13 +73,16 @@ export function ProjectExplanation() {
                 expandHeight={200}
               />
             </InfoCardContent>
-            <InfoCardFooter className="mt-3">
+            <InfoCardFooter className="mt-6 flex ">
               <InfoCardAction>
-                <Link
-                  href={card.learnMoreLink}
-                  className="text-xs flex flex-row items-center gap-1 text-primary hover:underline"
-                >
-                  Voir plus <ExternalLink size={12} />
+                <Link href={card.learnMoreLink} className="w-full">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs gap-1 rounded-md"
+                  >
+                    Voir plus <ExternalLink size={12} />
+                  </Button>
                 </Link>
               </InfoCardAction>
             </InfoCardFooter>
