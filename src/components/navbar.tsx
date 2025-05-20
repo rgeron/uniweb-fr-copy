@@ -41,25 +41,25 @@ export function Navbar() {
                 <ProductItem
                   title="Notre engagement"
                   href="/notre-engagement"
-                  src="/images/placeholder.png"
+                  src="/images/navbar/engagement.png"
                   description="Nos promesses et notre dévouement envers l'accessibilité."
                 />
                 <ProductItem
                   title="Notre histoire"
                   href="/notre-histoire"
-                  src="/images/service/accessibilite.png"
+                  src="/images/navbar/histoire.png"
                   description="Découvrez la genèse et l'évolution de Uniweb."
                 />
                 <ProductItem
                   title="Nos partenaires"
                   href="/nos-partenaires"
-                  src="/images/placeholder.png"
+                  src="/images/navbar/partenaire.png"
                   description="Ceux qui nous soutiennent et collaborent avec nous."
                 />
                 <ProductItem
                   title="Nos articles"
                   href="/blog"
-                  src="/images/placeholder.png"
+                  src="/images/navbar/article.png"
                   description="Restez informé avec nos dernières actualités et analyses."
                 />
               </div>
@@ -73,25 +73,25 @@ export function Navbar() {
                 <ProductItem
                   title="Comment ça marche ?"
                   href="/comment-ca-marche"
-                  src="/images/service/fonctionnalite.png"
+                  src="/images/navbar/comment.png"
                   description="Découvrez le fonctionnement de notre solution d'accessibilité."
                 />
                 <ProductItem
                   title="Sécurité des données"
                   href="/securite"
-                  src="/images/service/securite.png"
+                  src="/images/navbar/shield.png"
                   description="Nous garantissons la sécurité des données et le respect de la vie privée."
                 />
                 <ProductItem
                   title="Point de vue client"
                   href="/point-de-vue-client"
-                  src="/images/placeholder.png"
+                  src="/images/navbar/company.png"
                   description="L'impact de notre solution du point de vue de nos clients."
                 />
                 <ProductItem
                   title="Point de vue utilisateur"
                   href="/point-de-vue-utilisateur"
-                  src="/images/placeholder.png"
+                  src="/images/navbar/user.png"
                   description="L'amélioration de l'expérience pour les utilisateurs finaux."
                 />
               </div>
