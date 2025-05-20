@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SectionLayout } from "@/features/section-layout";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Mail } from "lucide-react";
@@ -9,92 +10,87 @@ import * as React from "react";
 interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
   title: string;
   description?: string;
-  items: {
-    question: string;
-    answer: string;
-  }[];
+  items: Array<{ question: string; answer: React.ReactNode }>;
   contactInfo?: {
     title: string;
     description: string;
     buttonText: string;
     onContact?: () => void;
   };
+  id: string;
+  className?: string;
 }
 
-const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
-  ({ className, title, description, items, contactInfo, ...props }, ref) => {
-    return (
-      <section
-        ref={ref}
-        className={cn(
-          "py-16 w-full bg-gradient-to-b from-transparent via-muted/50 to-transparent",
-          className
-        )}
-        {...props}
-      >
-        <div className="container">
-          {/* Header */}
+export function FaqSection(props: FaqSectionProps) {
+  const { title, description, items, contactInfo, id, className } = props;
+  return (
+    <SectionLayout
+      id={id}
+      size="sm"
+      variant="default"
+      containerClassName={cn(
+        "bg-gradient-to-b from-transparent via-muted/50 to-transparent",
+        className
+      )}
+    >
+      <div className="max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-semibold mb-3 bg-gradient-to-r from-foreground via-foreground/80 to-foreground bg-clip-text text-transparent">
+            {title}
+          </h2>
+          {description && (
+            <p className="text-sm text-muted-foreground">{description}</p>
+          )}
+        </motion.div>
+
+        <div className="space-y-2">
+          {items.map((item, index) => (
+            <FaqItem
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              index={index}
+            />
+          ))}
+        </div>
+
+        {contactInfo && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl mx-auto text-center mb-12"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-12 p-6 rounded-lg text-center"
           >
-            <h2 className="text-3xl font-semibold mb-3 bg-gradient-to-r from-foreground via-foreground/80 to-foreground bg-clip-text text-transparent">
-              {title}
-            </h2>
-            {description && (
-              <p className="text-sm text-muted-foreground">{description}</p>
-            )}
+            <div className="inline-flex items-center justify-center p-1.5 rounded-full mb-4">
+              <Mail className="h-4 w-4" />
+            </div>
+            <p className="text-sm font-medium text-foreground mb-1">
+              {contactInfo.title}
+            </p>
+            <p className="text-xs text-muted-foreground mb-4">
+              {contactInfo.description}
+            </p>
+            <Button size="sm" onClick={contactInfo.onContact}>
+              {contactInfo.buttonText}
+            </Button>
           </motion.div>
-
-          {/* FAQ Items */}
-          <div className="max-w-2xl mx-auto space-y-2">
-            {items.map((item, index) => (
-              <FaqItem
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                index={index}
-              />
-            ))}
-          </div>
-
-          {/* Contact Section */}
-          {contactInfo && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="max-w-md mx-auto mt-12 p-6 rounded-lg text-center"
-            >
-              <div className="inline-flex items-center justify-center p-1.5 rounded-full mb-4">
-                <Mail className="h-4 w-4" />
-              </div>
-              <p className="text-sm font-medium text-foreground mb-1">
-                {contactInfo.title}
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">
-                {contactInfo.description}
-              </p>
-              <Button size="sm" onClick={contactInfo.onContact}>
-                {contactInfo.buttonText}
-              </Button>
-            </motion.div>
-          )}
-        </div>
-      </section>
-    );
-  }
-);
-FaqSection.displayName = "FaqSection";
+        )}
+      </div>
+    </SectionLayout>
+  );
+}
 
 // Internal FaqItem component
 const FaqItem = React.forwardRef<
   HTMLDivElement,
   {
     question: string;
-    answer: string;
+    answer: React.ReactNode;
     index: number;
   }
 >((props, ref) => {
@@ -177,5 +173,3 @@ const FaqItem = React.forwardRef<
   );
 });
 FaqItem.displayName = "FaqItem";
-
-export { FaqSection };

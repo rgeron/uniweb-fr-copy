@@ -1,7 +1,7 @@
-import { FaqSection } from "@/components/blocks/faq";
-import { FeaturesSection } from "@/components/blocks/feature-section";
-import { HeroArrow } from "@/components/blocks/hero-arrow";
-import { ProjectExplanation } from "@/components/blocks/project-explanation";
+import { FaqSection } from "@/components/sections/faq";
+import { FeaturesSection } from "@/components/sections/feature-section";
+import { HeroArrow } from "@/components/sections/hero-arrow";
+import { ProjectExplanation } from "@/components/sections/project-explanation";
 import {
   BrandScroller,
   BrandScrollerReverse,
