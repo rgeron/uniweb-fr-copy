@@ -42,11 +42,12 @@ export function HeroArrow() {
             className="absolute transition-opacity duration-200 ease-out [filter:invert(34%)_sepia(90%)_saturate(2000%)_hue-rotate(210deg)_brightness(84%)_contrast(101%)] 
               sm:max-w-none opacity-70 md:opacity-80
               
-              sm:w-[90%] md:w-[100%] lg:w-[90%]
+              sm:w-[90%] md:w-[90%] lg:w-[80%]
               
-              w-[80%] sm:transform sm:translate-x-1/4 sm:right-[30%] sm:top-[120%] sm:-translate-y-1/2
+              sm:transform sm:translate-x-1/4 sm:right-[30%] sm:top-[120%] sm:-translate-y-1/2
+              lg:right-[15%] lg:top-[80%] lg:translate-x-0 lg:-translate-y-1/2
               
-              right-[40%] top-[80%] -translate-x-1/2 -translate-y-1/2"
+              w-[90%] -right-[20%] top-[110%] -translate-x-1/3 -translate-y-1/3"
             style={{ opacity: opacity }}
             priority
           />
