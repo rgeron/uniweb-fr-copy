@@ -107,11 +107,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-8">
             Ce que nos clients disent
           </h2>
-          <TestimonialCarousel
-            testimonials={TESTIMONIALS}
-            companyLogoPath="/images/logo/"
-            avatarPath="/images/avatars/"
-          />
+          <TestimonialCarousel testimonials={TESTIMONIALS} />
         </div>
 
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">

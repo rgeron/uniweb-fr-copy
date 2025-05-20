@@ -1,7 +1,8 @@
 export const TESTIMONIALS = [
   {
     company: "MGEN",
-    avatar: "woman1.avif",
+    companyLogo: "/images/logo/company-logo/mgen.png",
+    avatar: "/images/avatars/woman1.avif",
     name: "Sophie Martin",
     role: "Directrice Marketing",
     review:
@@ -9,7 +10,8 @@ export const TESTIMONIALS = [
   },
   {
     company: "Canal+",
-    avatar: "man1.avif",
+    companyLogo: "/images/logo/company-logo/canal+.png",
+    avatar: "/images/avatars/man1.avif",
     name: "Thomas Dubois",
     role: "Responsable Technique",
     review:
@@ -17,7 +19,8 @@ export const TESTIMONIALS = [
   },
   {
     company: "AXA",
-    avatar: "woman2.avif",
+    companyLogo: "/images/logo/company-logo/axa.png",
+    avatar: "/images/avatars/woman2.avif",
     name: "Marie Lefèvre",
     role: "Directrice E-commerce",
     review:
