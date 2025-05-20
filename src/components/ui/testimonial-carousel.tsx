@@ -49,12 +49,6 @@ export const TestimonialCarousel = React.forwardRef<
       });
     }, [api]);
 
-    // Helper to get logo file extension based on company name
-    const getLogoExtension = (company: string) => {
-      if (company === "MGEN") return "jpg";
-      return "png";
-    };
-
     return (
       <div ref={ref} className={cn("py-16", className)} {...props}>
         <Carousel
@@ -69,9 +63,7 @@ export const TestimonialCarousel = React.forwardRef<
               >
                 <div className="mb-7 relative h-8 w-32">
                   <Image
-                    src={`${companyLogoPath}testimonial/${
-                      testimonial.company
-                    }.${getLogoExtension(testimonial.company)}`}
+                    src={`${companyLogoPath}testimonial/${testimonial.company}.png`}
                     alt={`${testimonial.company} logo`}
                     fill
                     className="object-contain"
