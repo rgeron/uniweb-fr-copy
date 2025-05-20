@@ -46,7 +46,7 @@ const stats: StatProps[] = [
 
 export function StatsSection() {
   return (
-    <SectionLayout size="lg">
+    <SectionLayout size="lg" className="mt-[-3rem] md:mt-[-4rem] lg:mt-[-5rem]">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold">
           Quelques chiffres sur le handicap en France
