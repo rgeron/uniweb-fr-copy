@@ -32,8 +32,8 @@ export function ProjectExplanation() {
       className: "",
     },
     {
-      title: "Respect des Normes",
-      description: "Comprenez notre engagement envers les standards WCAG.",
+      title: "Respect des normes",
+      description: "Comprenez notre engagement envers les standards.",
       videoSrc:
         "https://videos.pexels.com/video-files/7578539/7578539-hd_1280_720_30fps.mp4",
       learnMoreLink: "/features/standards-compliant",
