@@ -8,6 +8,19 @@ import { SectionLayout } from "@/features/section-layout";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
+type FeatureLineProps = {
+  badge: string;
+  title: string;
+  description: string;
+  component: ReactNode;
+};
+
+type FeaturesSectionProps = {
+  features: FeatureLineProps[];
+  className?: string;
+  id?: string;
+};
+
 export function FeaturesSection(props: FeaturesSectionProps) {
   const { features, className, id = "features" } = props;
 
@@ -52,13 +65,6 @@ export function FeaturesSection(props: FeaturesSectionProps) {
     </SectionLayout>
   );
 }
-
-type FeatureLineProps = {
-  badge: string;
-  title: string;
-  description: string;
-  component: ReactNode;
-};
 
 const FeatureLine = (props: FeatureLineProps) => {
   return (

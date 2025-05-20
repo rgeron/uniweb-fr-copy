@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
+import Image from "next/image";
 import React, {
   createContext,
   useContext,
@@ -182,7 +183,7 @@ InfoCardAction.displayName = "InfoCardAction";
 const InfoCardMedia = ({
   media = [],
   className,
-  loading = undefined,
+  loading,
   shrinkHeight = 75,
   expandHeight = 150,
 }: InfoCardMediaProps) => {
@@ -330,16 +331,22 @@ const InfoCardMedia = ({
                     {...mediaProps}
                   />
                 ) : (
-                  <img
+                  <Image
                     src={src}
-                    alt={alt}
+                    alt={alt || ""}
                     className={cn(
                       "w-full rounded-md border border-gray-200 object-cover shadow-lg",
                       itemClassName
                     )}
                     onLoad={() => handleMediaSettled(src)}
                     onError={() => handleMediaSettled(src)}
-                    loading={loading}
+                    width={500}
+                    height={300}
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
+                    priority={loading === "eager"}
                     {...mediaProps}
                   />
                 )}
@@ -370,5 +377,6 @@ export {
   InfoCardDescription,
   InfoCardFooter,
   InfoCardMedia,
-  InfoCardTitle,
+  InfoCardTitle
 };
+

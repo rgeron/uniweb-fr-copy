@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function TarifsPage() {
+export default function TarifsPage() {
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="text-center mb-12">
@@ -201,5 +201,3 @@ export function TarifsPage() {
     </div>
   );
 }
-
-export default TarifsPage;
