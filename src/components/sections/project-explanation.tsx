@@ -14,30 +14,27 @@ import Link from "next/link";
 export function ProjectExplanation() {
   const cardData = [
     {
-      title: "Facile à Utiliser",
-      description: "Découvrez comment notre script simplifie l'accessibilité.",
-      videoSrc:
-        "https://video.twimg.com/ext_tw_video/1811493439357476864/pu/vid/avc1/1280x720/r_A2n1_eDbYiTMkU.mp4?tag=12",
+      title: "Facile à mettre en place POUR VOUS",
+      description: "Ajouter un seul script à votre site web.",
+      videoSrc: "/videos/easy-to-implement.mov",
+      learnMoreLink: "/features/easy-to-implement",
+      storageKey: "info-card-easy-to-implement",
+      className: "",
+    },
+    {
+      title: "Facile à utiliser POUR TOUS",
+      description: "Votre site web reste le même, mais accessible à tous.",
+      videoSrc: "/videos/easy-to-use.mov",
       learnMoreLink: "/features/easy-to-use",
       storageKey: "info-card-easy-to-use",
       className: "",
     },
     {
-      title: "Facile à Voir",
-      description: "Voyez les ajustements visuels en action.",
-      videoSrc:
-        "https://videos.pexels.com/video-files/3844600/3844600-hd_1280_720_25fps.mp4",
-      learnMoreLink: "/features/easy-to-see",
-      storageKey: "info-card-easy-to-see",
-      className: "",
-    },
-    {
-      title: "Respect des normes",
-      description: "Comprenez notre engagement envers les standards.",
-      videoSrc:
-        "https://videos.pexels.com/video-files/7578539/7578539-hd_1280_720_30fps.mp4",
-      learnMoreLink: "/features/standards-compliant",
-      storageKey: "info-card-standards-compliant",
+      title: "Respecte les critères RGAA",
+      description: "Conforme aux critères RGAA 4.1",
+      videoSrc: "/videos/rgpa-compliant.mov",
+      learnMoreLink: "/features/rgpa-compliant",
+      storageKey: "info-card-rgpa-compliant",
       className: "",
     },
   ];
