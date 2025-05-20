@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
         <Link href="/">
           <Image
-            src="/images/uniweb-full-logo.png"
+            src="/images/logo/uniweb-full-logo.png"
             alt="Uniweb"
             width={150}
             height={75}
