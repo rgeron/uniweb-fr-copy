@@ -1,11 +1,11 @@
 import { FaqSection } from "@/components/blocks/faq";
 import { FeaturesSection } from "@/components/blocks/feature-section";
+import { HeroArrow } from "@/components/blocks/hero-arrow";
 import { ProjectExplanation } from "@/components/blocks/project-explanation";
 import {
   BrandScroller,
   BrandScrollerReverse,
 } from "@/components/ui/brand-scoller";
-import { HeroArrow } from "@/components/blocks/hero-arrow";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { contactInfo, faqItems } from "@/content/FAQ_CONTACT_DATA";
 import { TESTIMONIALS } from "@/content/TESTIMONIALS";
@@ -14,12 +14,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center bg-background text-foreground">
-      {/* Hero Section */}
-      <HeroArrow />
-
-      <ProjectExplanation />
-
       <main className="flex flex-col gap-8 pt-8 pb-16 w-full">
+        {/* Hero Section */}
+        <HeroArrow />
+
+        <ProjectExplanation />
+
         <div className="flex flex-col gap-6 items-center justify-center py-8">
           <BrandScroller />
           <BrandScrollerReverse />
