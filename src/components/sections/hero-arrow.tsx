@@ -51,6 +51,15 @@ export function HeroArrow() {
             style={{ opacity: opacity }}
             priority
           />
+
+          <div
+            className="absolute border-4 border-blue-600 bg-transparent w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28 transition-opacity duration-200 ease-out
+              sm:right-[10%] sm:top-[120%] 
+              lg:right-[5%] lg:top-[80%]
+              right-[0%] top-[110%]"
+            style={{ opacity: opacity }}
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>
