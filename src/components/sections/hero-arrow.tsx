@@ -1,8 +1,24 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function HeroArrow() {
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Start fading out immediately when scrolling begins
+      // Fully disappear by 150px of scroll
+      const scrollY = window.scrollY;
+      const newOpacity = Math.max(0, 1 - scrollY / 150);
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="w-full relative overflow-visible py-10 md:py-20 lg:py-28 mb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative z-10">
@@ -23,7 +39,8 @@ export function HeroArrow() {
             alt="Flèche décorative"
             width={1372}
             height={610}
-            className="absolute transform translate-x-1/4 right-[30%] top-[60%] -translate-y-1/2 opacity-70 md:opacity-80 max-w-none w-[120%] md:w-[100%] lg:w-[90%]"
+            className="absolute transform translate-x-1/4 right-[30%] top-[60%] -translate-y-1/2 opacity-70 md:opacity-80 max-w-none w-[120%] md:w-[100%] lg:w-[90%] transition-opacity duration-200 ease-out"
+            style={{ opacity: opacity }}
             priority
           />
         </div>
