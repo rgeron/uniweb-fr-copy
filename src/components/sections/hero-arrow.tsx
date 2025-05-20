@@ -20,14 +20,14 @@ export function HeroArrow() {
   }, []);
 
   return (
-    <section className="w-full relative overflow-visible py-10 md:py-20 lg:py-28 mb-20">
+    <section className="w-full relative overflow-visible py-6 md:py-12 lg:py-16 mb-52">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative z-10">
-        <h1 className="flex flex-col items-center">
-          <span className="text-2xl md:text-3xl lg:text-4xl font-medium mb-1 md:mb-2 text-foreground/90">
-            Rendez vos sites web
+        <h1 className="flex flex-col items-center max-w-4xl -mt-4 md:-mt-6">
+          <span className="text-base sm:text-xl md:text-2xl lg:text-3xl font-normal mb-1 sm:mb-2 text-foreground/70 tracking-tight">
+            Rendez votre site web
           </span>
-          <span className="text-4xl md:text-8xl lg:text-7xl font-extrabold mt-1 md:mt-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
-            accessibles à tous
+          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mt-0 sm:mt-1 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 tracking-tight leading-[1.1]">
+            accessible à tous
           </span>
         </h1>
       </div>
