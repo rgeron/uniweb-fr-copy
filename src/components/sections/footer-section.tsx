@@ -40,10 +40,8 @@ export function FooterSection() {
               Contactez-nous
             </h2>
             <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Téléphone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
+              <p>Téléphone: (+33) 7 83 32 79 60</p>
+              <p>Email: contact@uniweb.fr</p>
             </address>
 
             <h3 className="mt-6 mb-4 text-lg font-semibold">
@@ -133,28 +131,6 @@ export function FooterSection() {
                 Nos articles
               </Link>
             </nav>
-
-            <h3 className="mt-6 mb-4 text-lg font-semibold">Liens rapides</h3>
-            <nav className="space-y-2 text-sm">
-              <Link
-                href="/rgaa"
-                className="block transition-colors hover:text-primary"
-              >
-                RGAA
-              </Link>
-              <Link
-                href="/tarifs"
-                className="block transition-colors hover:text-primary"
-              >
-                Les tarifs
-              </Link>
-              <Link
-                href="/essai-gratuit"
-                className="block transition-colors hover:text-primary"
-              >
-                30 jours gratuit
-              </Link>
-            </nav>
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Que faisons-nous ?</h3>
@@ -185,7 +161,29 @@ export function FooterSection() {
               </Link>
             </nav>
           </div>
-          <div className="relative"></div>
+          <div className="relative">
+            <h3 className="mb-4 text-lg font-semibold">Liens rapides</h3>
+            <nav className="space-y-2 text-sm">
+              <Link
+                href="/rgaa"
+                className="block transition-colors hover:text-primary"
+              >
+                RGAA
+              </Link>
+              <Link
+                href="/tarifs"
+                className="block transition-colors hover:text-primary"
+              >
+                Les tarifs
+              </Link>
+              <Link
+                href="/essai-gratuit"
+                className="block transition-colors hover:text-primary"
+              >
+                30 jours gratuit
+              </Link>
+            </nav>
+          </div>
         </div>
       </SectionLayout>
       <div className="bg-muted text-muted-foreground py-6">
