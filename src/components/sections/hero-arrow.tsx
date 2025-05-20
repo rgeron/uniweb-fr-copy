@@ -27,7 +27,7 @@ export function HeroArrow() {
             Rendez votre site web
           </span>
           <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mt-0 sm:mt-1 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 tracking-tight leading-[1.1]">
-            accessible à tous
+            Accessible à tous
           </span>
         </h1>
       </div>
