@@ -39,7 +39,14 @@ export function HeroArrow() {
             alt="Flèche décorative"
             width={1372}
             height={610}
-            className="absolute transform translate-x-1/4 right-[30%] top-[60%] -translate-y-1/2 opacity-70 md:opacity-80 max-w-none w-[120%] md:w-[100%] lg:w-[90%] transition-opacity duration-200 ease-out [filter:invert(34%)_sepia(90%)_saturate(2000%)_hue-rotate(210deg)_brightness(84%)_contrast(101%)]"
+            className="absolute transition-opacity duration-200 ease-out [filter:invert(34%)_sepia(90%)_saturate(2000%)_hue-rotate(210deg)_brightness(84%)_contrast(101%)] 
+              sm:max-w-none opacity-70 md:opacity-80
+              
+              sm:w-[90%] md:w-[100%] lg:w-[90%]
+              
+              w-[80%] sm:transform sm:translate-x-1/4 sm:right-[30%] sm:top-[120%] sm:-translate-y-1/2
+              
+              right-[40%] top-[80%] -translate-x-1/2 -translate-y-1/2"
             style={{ opacity: opacity }}
             priority
           />
