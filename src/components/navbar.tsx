@@ -17,23 +17,48 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-4 left-0 right-0 mx-auto w-[90%] z-50">
-      <div className="flex justify-between items-center gap-6">
+    <div className="fixed top-4 left-0 right-0 mx-auto w-[95%] sm:w-[90%] z-50">
+      {/* For small screens - single container */}
+      <div className="sm:hidden bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-3 border border-border">
+        <div className="flex items-center justify-between">
+          <Link href="/">
+            <Image
+              src="/images/logo/uniweb-full-logo.png"
+              alt="Uniweb"
+              width={120}
+              height={60}
+              className="flex-shrink-0 w-[100px]"
+            />
+          </Link>
+
+          {/* Mobile menu button */}
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <MenuIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* For medium and large screens - two containers */}
+      <div className="hidden sm:flex justify-between items-center gap-3 sm:gap-6">
         {/* Left Container */}
-        <div className="flex-1 bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-5 border border-border h-20">
+        <div className="flex-1 bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-3 sm:p-5 border border-border h-16 sm:h-20">
           <div className="flex items-center justify-between h-full">
             <Link href="/">
               <Image
                 src="/images/logo/uniweb-full-logo.png"
                 alt="Uniweb"
-                width={140}
-                height={70}
-                className="flex-shrink-0"
+                width={120}
+                height={60}
+                className="flex-shrink-0 w-[100px] md:w-[140px]"
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex justify-center items-center gap-8 mx-auto">
+            {/* Navigation Links - visible only on large screens */}
+            <div className="hidden lg:flex justify-center items-center gap-3 lg:gap-8 mx-auto">
               <Menu setActive={setActive}>
                 <MenuItem
                   setActive={setActive}
@@ -104,41 +129,56 @@ export function Navbar() {
               </Menu>
             </div>
 
-            {/* Connexion button - moved from right div */}
-            <div className="hidden md:flex">
+            {/* Connexion button - visible only on large screens */}
+            <div className="hidden lg:flex">
               <Link
                 href="/connexion"
-                className="px-5 py-2.5 text-foreground hover:text-primary transition-colors text-base font-medium"
+                className="px-2 md:px-3 lg:px-5 py-2 text-foreground hover:text-primary transition-colors text-sm md:text-base font-medium whitespace-nowrap"
               >
                 Connexion
               </Link>
             </div>
-          </div>
-        </div>
 
-        {/* Right Container */}
-        <div className="bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-5 border border-border h-20">
-          <div className="flex items-center h-full">
-            {/* CTA Buttons */}
-            <div className="flex items-center gap-4">
+            {/* CTA Buttons - visible on medium screens in left div */}
+            <div className="md:flex lg:hidden items-center gap-3">
               <Link
                 href="/prendre-rendez-vous"
-                className="hidden md:inline-flex px-6 py-3 rounded-lg font-medium transition-all text-lg hover:scale-110"
+                className="px-3 py-2 rounded-lg font-medium transition-all text-sm hover:scale-110 whitespace-nowrap"
               >
                 Prendre rendez-vous
               </Link>
               <a
                 href="/essai-gratuit"
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all text-lg shadow-md hover:shadow-lg hover:scale-105"
+                className="px-3 py-2 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all text-sm shadow-md hover:shadow-lg hover:scale-105 whitespace-nowrap"
               >
-                Essayer 30 jours gratuit
+                30j gratuit
               </a>
+            </div>
+          </div>
+        </div>
 
-              {/* Mobile menu button */}
-              <button
-                className="md:hidden"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        {/* Right Container */}
+        <div className="bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-3 sm:p-5 border border-border h-16 sm:h-20">
+          <div className="flex items-center h-full">
+            {/* CTA Buttons - visible only on large screens */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Link
+                href="/prendre-rendez-vous"
+                className="px-3 md:px-4 lg:px-6 py-2 lg:py-3 rounded-lg font-medium transition-all text-sm md:text-base lg:text-lg hover:scale-110 whitespace-nowrap"
               >
+                Prendre rendez-vous
+              </Link>
+              <a
+                href="/essai-gratuit"
+                className="px-3 sm:px-4 md:px-5 lg:px-6 py-2 lg:py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all text-sm md:text-base lg:text-lg shadow-md hover:shadow-lg hover:scale-105 whitespace-nowrap"
+              >
+                <span className="hidden sm:inline">Essayer</span> 30j gratuit
+              </a>
+            </div>
+
+            {/* Menu button for medium screens */}
+            <div className="md:flex lg:hidden items-center">
+              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
                 ) : (
@@ -152,7 +192,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border py-4">
+        <div className="lg:hidden bg-background border-t border-border py-4 mt-2 rounded-xl shadow-lg">
           <div className="flex flex-col space-y-4 px-4">
             <div className="border-b border-border pb-3">
               <p className="font-medium mb-2">Qui sommes-nous ?</p>
