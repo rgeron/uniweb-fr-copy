@@ -17,97 +17,120 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full bg-background shadow-lg py-2 border-b border-border z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
-        <Link href="/">
-          <Image
-            src="/images/logo/uniweb-full-logo.png"
-            alt="Uniweb"
-            width={150}
-            height={75}
-            className="flex-shrink-0"
-          />
-        </Link>
+    <div className="fixed top-4 left-0 right-0 mx-auto w-[90%] z-50">
+      <div className="relative flex items-center justify-between bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-4 border border-border">
+        {/* Left Section: Logo and Navigation */}
+        <div className="flex items-center gap-8">
+          <Link href="/">
+            <Image
+              src="/images/logo/uniweb-full-logo.png"
+              alt="Uniweb"
+              width={130}
+              height={65}
+              className="flex-shrink-0"
+            />
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-grow justify-center items-center gap-8">
-          <Menu setActive={setActive}>
-            <MenuItem
-              setActive={setActive}
-              active={active}
-              item="Qui sommes-nous ?"
-            >
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                <ProductItem
-                  title="Notre engagement"
-                  href="/notre-engagement"
-                  src="/images/navbar/engagement.png"
-                  description="Nos promesses et notre dévouement envers l'accessibilité."
-                />
-                <ProductItem
-                  title="Notre histoire"
-                  href="/notre-histoire"
-                  src="/images/navbar/histoire.png"
-                  description="Découvrez la genèse et l'évolution de Uniweb."
-                />
-                <ProductItem
-                  title="Nos partenaires"
-                  href="/nos-partenaires"
-                  src="/images/navbar/partenaire.png"
-                  description="Ceux qui nous soutiennent et collaborent avec nous."
-                />
-                <ProductItem
-                  title="Nos articles"
-                  href="/blog"
-                  src="/images/navbar/article.png"
-                  description="Restez informé avec nos dernières actualités et analyses."
-                />
-              </div>
-            </MenuItem>
-            <MenuItem
-              setActive={setActive}
-              active={active}
-              item="Que faisons-nous ?"
-            >
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                <ProductItem
-                  title="Comment ça marche ?"
-                  href="/comment-ca-marche"
-                  src="/images/navbar/comment.png"
-                  description="Découvrez le fonctionnement de notre solution d'accessibilité."
-                />
-                <ProductItem
-                  title="Sécurité des données"
-                  href="/securite"
-                  src="/images/navbar/shield.png"
-                  description="Nous garantissons la sécurité des données et le respect de la vie privée."
-                />
-                <ProductItem
-                  title="Point de vue client"
-                  href="/point-de-vue-client"
-                  src="/images/navbar/company.png"
-                  description="L'impact de notre solution du point de vue de nos clients."
-                />
-                <ProductItem
-                  title="Point de vue utilisateur"
-                  href="/point-de-vue-utilisateur"
-                  src="/images/navbar/user.png"
-                  description="L'amélioration de l'expérience pour les utilisateurs finaux."
-                />
-              </div>
-            </MenuItem>
-            <HoveredLink href="/rgaa">RGAA</HoveredLink>
-            <HoveredLink href="/tarifs">Les tarifs</HoveredLink>
-          </Menu>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex justify-center items-center gap-6">
+            <Menu setActive={setActive}>
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Qui sommes-nous ?"
+              >
+                <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                  <ProductItem
+                    title="Notre engagement"
+                    href="/notre-engagement"
+                    src="/images/navbar/engagement.png"
+                    description="Nos promesses et notre dévouement envers l'accessibilité."
+                  />
+                  <ProductItem
+                    title="Notre histoire"
+                    href="/notre-histoire"
+                    src="/images/navbar/histoire.png"
+                    description="Découvrez la genèse et l'évolution de Uniweb."
+                  />
+                  <ProductItem
+                    title="Nos partenaires"
+                    href="/nos-partenaires"
+                    src="/images/navbar/partenaire.png"
+                    description="Ceux qui nous soutiennent et collaborent avec nous."
+                  />
+                  <ProductItem
+                    title="Nos articles"
+                    href="/blog"
+                    src="/images/navbar/article.png"
+                    description="Restez informé avec nos dernières actualités et analyses."
+                  />
+                </div>
+              </MenuItem>
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Que faisons-nous ?"
+              >
+                <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                  <ProductItem
+                    title="Comment ça marche ?"
+                    href="/comment-ca-marche"
+                    src="/images/navbar/comment.png"
+                    description="Découvrez le fonctionnement de notre solution d'accessibilité."
+                  />
+                  <ProductItem
+                    title="Sécurité des données"
+                    href="/securite"
+                    src="/images/navbar/shield.png"
+                    description="Nous garantissons la sécurité des données et le respect de la vie privée."
+                  />
+                  <ProductItem
+                    title="Point de vue client"
+                    href="/point-de-vue-client"
+                    src="/images/navbar/company.png"
+                    description="L'impact de notre solution du point de vue de nos clients."
+                  />
+                  <ProductItem
+                    title="Point de vue utilisateur"
+                    href="/point-de-vue-utilisateur"
+                    src="/images/navbar/user.png"
+                    description="L'amélioration de l'expérience pour les utilisateurs finaux."
+                  />
+                </div>
+              </MenuItem>
+              <HoveredLink href="/rgaa">RGAA</HoveredLink>
+              <HoveredLink href="/tarifs">Les tarifs</HoveredLink>
+            </Menu>
+          </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="/essai-gratuit"
-            className="px-4 py-2 md:px-6 md:py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-sm md:text-base"
-          >
-            30 jours gratuit
-          </a>
+        {/* Right Section: Action Buttons */}
+        <div className="flex items-center gap-3">
+          {/* Sub-section 1: Connexion */}
+          <div className="hidden md:flex">
+            <Link
+              href="/connexion"
+              className="px-4 py-2 text-foreground hover:text-primary transition-colors text-sm font-medium"
+            >
+              Connexion
+            </Link>
+          </div>
+
+          {/* Sub-section 2: CTA Buttons */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/prendre-rendez-vous"
+              className="hidden md:inline-flex px-4 py-2 text-foreground bg-secondary hover:bg-secondary/90 rounded-md font-medium transition-colors text-sm"
+            >
+              Prendre rendez-vous
+            </Link>
+            <a
+              href="/essai-gratuit"
+              className="px-4 py-2 md:px-5 md:py-2.5 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-sm"
+            >
+              Essayer 30 jours gratuit
+            </a>
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -209,6 +232,23 @@ export function Navbar() {
             >
               Les tarifs
             </Link>
+
+            <div className="border-t border-border pt-4 flex flex-col space-y-3">
+              <Link
+                href="/connexion"
+                className="px-4 py-2 text-center text-foreground hover:text-primary transition-colors text-sm font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Connexion
+              </Link>
+              <Link
+                href="/prendre-rendez-vous"
+                className="px-4 py-2 text-center text-foreground bg-secondary hover:bg-secondary/90 rounded-md font-medium transition-colors text-sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Prendre rendez-vous
+              </Link>
+            </div>
 
             <div className="pt-2 flex justify-center">
               <ThemeToggle />
