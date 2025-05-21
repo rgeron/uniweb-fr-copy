@@ -20,7 +20,7 @@ export function Navbar() {
     <div className="fixed top-4 left-0 right-0 mx-auto w-[90%] z-50">
       <div className="flex justify-between items-center gap-6">
         {/* Left Container */}
-        <div className="flex-1 bg-gray-200/80 dark:bg-gray-800/80 backdrop-blur-md shadow-xl rounded-xl p-4 border border-border h-16">
+        <div className="flex-1 bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-4 border border-border h-16">
           <div className="flex items-center justify-between h-full">
             <div className="flex items-center gap-8">
               <Link href="/">
@@ -119,7 +119,7 @@ export function Navbar() {
         </div>
 
         {/* Right Container */}
-        <div className="bg-gray-300/80 dark:bg-gray-700/80 backdrop-blur-md shadow-xl rounded-xl p-4 border border-border h-16">
+        <div className="bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-4 border border-border h-16">
           <div className="flex items-center h-full">
             {/* CTA Buttons */}
             <div className="flex items-center gap-3">
