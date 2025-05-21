@@ -53,12 +53,12 @@ export function Navbar() {
                 alt="Uniweb"
                 width={120}
                 height={60}
-                className="flex-shrink-0 w-[100px] md:w-[140px]"
+                className="flex-shrink-0 w-[140px]"
               />
             </Link>
 
-            {/* Navigation Links - visible only on large screens */}
-            <div className="hidden lg:flex justify-center items-center gap-3 lg:gap-8 mx-auto">
+            {/* Navigation Links - visible only on xl and above screens */}
+            <div className="hidden xl:flex justify-center items-center gap-3 xl:gap-8 mx-auto">
               <Menu setActive={setActive}>
                 <MenuItem
                   setActive={setActive}
@@ -129,18 +129,18 @@ export function Navbar() {
               </Menu>
             </div>
 
-            {/* Connexion button - visible only on large screens */}
-            <div className="hidden lg:flex">
+            {/* Connexion button - visible only on xl and above screens */}
+            <div className="hidden xl:flex">
               <Link
                 href="/connexion"
-                className="px-2 md:px-3 lg:px-5 py-2 text-foreground hover:text-primary transition-colors text-sm md:text-base font-medium whitespace-nowrap"
+                className="px-2 md:px-3 xl:px-5 py-2 text-foreground hover:text-primary transition-colors text-sm md:text-base font-medium whitespace-nowrap"
               >
                 Connexion
               </Link>
             </div>
 
-            {/* CTA Buttons - visible on medium screens in left div */}
-            <div className="md:flex lg:hidden items-center gap-3">
+            {/* CTA Buttons - visible on md-xl screens in left div */}
+            <div className="md:flex xl:hidden items-center gap-3">
               <Link
                 href="/prendre-rendez-vous"
                 className="px-3 py-2 rounded-lg font-medium transition-all text-sm hover:scale-110 whitespace-nowrap"
@@ -160,24 +160,24 @@ export function Navbar() {
         {/* Right Container */}
         <div className="bg-white/80 dark:bg-background/80 backdrop-blur-md shadow-xl rounded-xl p-3 sm:p-5 border border-border h-16 sm:h-20">
           <div className="flex items-center h-full">
-            {/* CTA Buttons - visible only on large screens */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* CTA Buttons - visible only on xl screens */}
+            <div className="hidden xl:flex items-center gap-4">
               <Link
                 href="/prendre-rendez-vous"
-                className="px-3 md:px-4 lg:px-6 py-2 lg:py-3 rounded-lg font-medium transition-all text-sm md:text-base lg:text-lg hover:scale-110 whitespace-nowrap"
+                className="px-3 md:px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-medium transition-all text-sm md:text-base xl:text-lg hover:scale-110 whitespace-nowrap"
               >
                 Prendre rendez-vous
               </Link>
               <a
                 href="/essai-gratuit"
-                className="px-3 sm:px-4 md:px-5 lg:px-6 py-2 lg:py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all text-sm md:text-base lg:text-lg shadow-md hover:shadow-lg hover:scale-105 whitespace-nowrap"
+                className="px-3 sm:px-4 md:px-5 xl:px-6 py-2 xl:py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all text-sm md:text-base xl:text-lg shadow-md hover:shadow-lg hover:scale-105 whitespace-nowrap"
               >
                 <span className="hidden sm:inline">Essayer</span> 30j gratuit
               </a>
             </div>
 
             {/* Menu button for medium screens */}
-            <div className="md:flex lg:hidden items-center">
+            <div className="flex xl:hidden items-center">
               <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -192,7 +192,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border py-4 mt-2 rounded-xl shadow-lg">
+        <div className="xl:hidden bg-background border-t border-border py-4 mt-2 rounded-xl shadow-lg">
           <div className="flex flex-col space-y-4 px-4">
             <div className="border-b border-border pb-3">
               <p className="font-medium mb-2">Qui sommes-nous ?</p>
