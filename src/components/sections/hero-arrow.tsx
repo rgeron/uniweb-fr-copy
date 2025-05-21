@@ -33,31 +33,37 @@ export function HeroArrow() {
       </div>
 
       <div className="absolute w-full h-full top-0 left-0 pointer-events-none z-20">
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full overflow-visible">
           <Image
-            src="/svg/main-arrow.svg"
+            src="/svg/arrow.svg"
             alt="Flèche décorative"
-            width={1372}
+            width={1920}
             height={610}
             className="absolute transition-opacity duration-200 ease-out [filter:invert(34%)_sepia(90%)_saturate(2000%)_hue-rotate(210deg)_brightness(84%)_contrast(101%)] 
               sm:max-w-none opacity-70 md:opacity-80
               
-              sm:w-[90%] md:w-[90%] lg:w-[80%]
+              w-[95%] sm:w-[93%] md:w-[95%] lg:w-[95%]
               
-              sm:transform sm:translate-x-1/4 sm:right-[30%] sm:top-[120%] sm:-translate-y-1/2
-              lg:right-[15%] lg:top-[80%] lg:translate-x-0 lg:-translate-y-1/2
-              
-              w-[90%] -right-[20%] top-[110%] -translate-x-1/3 -translate-y-1/3"
-            style={{ opacity: opacity }}
+              left-0 sm:left-0 md:left-0 lg:left-0
+              top-[70%] sm:top-[90%] lg:top-[55%]
+              transform-none sm:transform-none lg:transform-none"
+            style={{ 
+              opacity: opacity,
+              objectFit: "cover",
+              objectPosition: "left center" 
+            }}
             priority
           />
 
           <div
-            className="absolute border-6 md:border-8 lg:border-10 rounded-2xl border-blue-600 bg-transparent w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 transition-opacity duration-200 ease-out
-              sm:right-[5%] sm:top-[120%] 
-              lg:right-[2%] lg:top-[80%]
-              right-[-5%] top-[110%]"
-            style={{ opacity: opacity }}
+            className="absolute border-l-6 border-t-6 border-b-6 md:border-l-8 md:border-t-8 md:border-b-8 lg:border-l-10 lg:border-t-10 lg:border-b-10 rounded-l-2xl border-blue-600 bg-transparent w-10 h-14 md:w-14 md:h-20 lg:w-16 lg:h-24 transition-opacity duration-200 ease-out
+              right-0 sm:right-0 lg:right-0 
+              top-[105%] sm:top-[143%] lg:top-[105%]
+              translate-y-[-50%] sm:translate-y-[-50%] lg:translate-y-[-50%]"
+            style={{ 
+              opacity: opacity,
+              borderRight: 'none'
+            }}
             aria-hidden="true"
           />
         </div>
