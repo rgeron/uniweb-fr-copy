@@ -28,7 +28,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-foreground hover:text-primary text-base"
+        className="cursor-pointer text-foreground hover:text-primary text-lg font-medium"
       >
         {item}
       </motion.p>
@@ -122,7 +122,7 @@ export const HoveredLink = ({ children, href, ...rest }: HoveredLinkProps) => {
     <Link
       href={href}
       {...rest}
-      className="text-popover-foreground hover:text-primary"
+      className="text-foreground hover:text-primary text-lg font-medium"
     >
       {children}
     </Link>
