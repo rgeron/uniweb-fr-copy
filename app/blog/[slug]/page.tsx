@@ -1,12 +1,14 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import type { Post } from "@/components/blocks/blog8";
 import { BLOG_POSTS_DATA } from "@/content/blog-posts-data";
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
+  searchParams: Promise<Record<string, string | string[]>>;
 }
 
 export async function generateStaticParams() {
@@ -19,8 +21,9 @@ function getPostBySlug(slug: string): Post | undefined {
   return BLOG_POSTS_DATA.find((post) => !post.isExternal && post.url === slug);
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const resolvedParams = await params;
+  const post = getPostBySlug(resolvedParams.slug);
 
   if (!post || post.isExternal) {
     notFound();
@@ -48,10 +51,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </div>
           {post.image && (
             <div className="mb-8 aspect-[16/9] overflow-hidden rounded-lg border">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                width={800}
+                height={450}
                 className="h-full w-full object-cover"
+                priority
               />
             </div>
           )}

@@ -31,7 +31,7 @@ const partners = [
     ],
     testimonial: {
       quote:
-        "Cette solution a transformé notre approche de l'accessibilité numérique, rendant nos contenus enfin accessibles à tous nos membres.",
+        "Cette solution a transformé notre approche de l&apos;accessibilité numérique, rendant nos contenus enfin accessibles à tous nos membres.",
       author: "Marie Dupont",
       role: "Directrice, Association Valentin Haüy",
     },
@@ -101,8 +101,8 @@ export function PartnerStackedCards() {
           </p>
           <div className="w-full max-w-md mx-auto h-1 bg-[#3f3eff] mt-4"></div>
           <p className="mt-8 text-base md:text-lg text-muted-foreground">
-            Découvrez l'écosystème qui entoure notre solution et la rend chaque
-            jour plus efficace et inclusive.
+            Découvrez l&apos;écosystème qui entoure notre solution et la rend
+            chaque jour plus efficace et inclusive.
           </p>
         </div>
       </div>
@@ -127,7 +127,7 @@ export function PartnerStackedCards() {
       <div className="h-screen flex items-center justify-center">
         <div className="max-w-xl text-center px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Envie de rejoindre l'aventure ?
+            Envie de rejoindre l&apos;aventure ?
           </h2>
           <p className="text-lg mb-8">
             Que vous soyez une association, une institution publique ou une

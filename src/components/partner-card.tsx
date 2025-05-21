@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { Award, Building, Check, ExternalLink, Users } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
@@ -12,7 +12,7 @@ interface PartnerCardProps {
   src: string;
   url: string;
   color: string;
-  progress: any;
+  progress: MotionValue<number>;
   range: number[];
   targetScale: number;
   partnerLogos?: Array<{
@@ -126,7 +126,7 @@ export function PartnerCard({
             {testimonial && (
               <div className="mt-8 p-4 bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200">
                 <p className="text-sm md:text-base italic mb-3">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <p className="text-sm font-semibold text-right">
                   — {testimonial.author}

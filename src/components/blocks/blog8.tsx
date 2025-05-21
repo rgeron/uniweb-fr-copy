@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
 
@@ -126,9 +127,11 @@ const Blog8 = ({
                     className="block"
                   >
                     <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
+                        width={800}
+                        height={450}
                         className="h-full w-full object-cover transition-opacity duration-200 fade-in hover:opacity-70"
                       />
                     </div>
