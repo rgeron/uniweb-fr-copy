@@ -33,8 +33,9 @@ export function HeroArrow() {
       </div>
 
       <div className="absolute w-full h-full top-0 left-0 pointer-events-none z-20">
-        <div className="relative w-full h-full overflow-visible">
+        <div className="relative w-full h-full overflow-visible overflow-visible">
           <Image
+            src="/svg/arrow.svg"
             src="/svg/arrow.svg"
             alt="Flèche décorative"
             width={1920}

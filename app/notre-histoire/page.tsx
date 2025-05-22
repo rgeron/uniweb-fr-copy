@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Timeline } from "./Timeline";
 
 export default function NotreHistoirePage() {
@@ -37,12 +38,13 @@ export default function NotreHistoirePage() {
         <div className="md:w-1/2">
           {/* Placeholder for an image */}
           <div className="aspect-video w-full rounded-lg bg-gray-300 dark:bg-gray-700">
-            <img
+            <Image
               src="https://via.placeholder.com/600x400.webp?text=Jean+Dupont+-+Premier+Pilote"
               alt="Jean Dupont, premier utilisateur pilote de notre solution d'accessibilité"
               className="h-full w-full rounded-lg object-cover"
               width={600}
               height={400}
+              priority
             />
           </div>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
