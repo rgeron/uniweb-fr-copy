@@ -37,6 +37,11 @@ export default function RootLayout({
           src="https://sdk.hellouniweb.com/base/main.js"
           data-account="lZOzpEvf"
         />
+        <Script
+          id="hs-script-loader"
+          src="//js-eu1.hs-scripts.com/146251277.js"
+          strategy="afterInteractive"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
