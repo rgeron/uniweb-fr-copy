@@ -2,6 +2,25 @@
 
 import { useEffect } from "react";
 
+// Définir l'interface pour l'objet hbspt
+interface HubSpotForms {
+  forms: {
+    create: (config: {
+      portalId: string;
+      formId: string;
+      region: string;
+      target: string;
+    }) => void;
+  };
+}
+
+// Étendre l'interface Window
+declare global {
+  interface Window {
+    hbspt: HubSpotForms;
+  }
+}
+
 export default function EssaiGratuitPage() {
   useEffect(() => {
     // Charger le script HubSpot
@@ -14,8 +33,8 @@ export default function EssaiGratuitPage() {
 
     // Créer le formulaire une fois que le script est chargé
     script.onload = () => {
-      if ((window as any).hbspt) {
-        (window as any).hbspt.forms.create({
+      if (window.hbspt) {
+        window.hbspt.forms.create({
           portalId: "146251277",
           formId: "26d0f065-c519-467d-95ad-ac9dd8bb35d6",
           region: "eu1",
@@ -37,7 +56,7 @@ export default function EssaiGratuitPage() {
         <p className="text-lg text-center mb-8">
           Découvrez comment notre solution peut rendre votre site web accessible à tous, 
           conformément aux normes RGAA. Remplissez simplement le formulaire ci-dessous 
-          pour commencer votre période d'essai gratuite.
+          pour commencer votre période d&apos;essai gratuite.
         </p>
         <div id="hubspot-form" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"></div>
       </div>
