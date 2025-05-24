@@ -1,6 +1,6 @@
 ---
 description: 
-globs: 
+globs: *.tsx
 alwaysApply: false
 ---
 ## Objective : respect Digital Accessibility - Design Rules to Respect (RGAA 4.1.2)

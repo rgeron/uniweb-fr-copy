@@ -1,6 +1,6 @@
 ---
 description: When creating an enum in TypeScript
-globs:
+globs: 
 alwaysApply: false
 ---
 
