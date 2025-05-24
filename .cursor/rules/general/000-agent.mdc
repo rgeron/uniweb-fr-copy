@@ -31,11 +31,6 @@ alwaysApply: true
 - Use dynamic loading for non-critical components.
 - Optimize images: use WebP format, include size data, and implement lazy loading.
 
-## database-querying-and-data-model-creation
-
-- Use Prisma SDK to query the database.
-- For data models, read the `.prisma` files.
-
 ## key-conventions
 
 - Use 'nuqs' for URL search parameter state management.
@@ -46,7 +41,7 @@ alwaysApply: true
 ## Output
 
 - Always write code in English
-- Always write UI in English
+- Always write UI in France
 - Do not add comments
 
 ## Terminal

@@ -1,0 +1,64 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Objective : respect Digital Accessibility - Design Rules to Respect (RGAA 4.1.2)
+
+- Achieve a compliance score >90% on an RGAA sample and anticipate post-2025 regulations
+- Any new page or functionality must be validated by a minimal accessibility review
+- Priority is given to blocking criteria: contrasts, keyboard navigation, alternative texts, heading structure
+
+- Text/background contrast: minimum 4.5:1 (AA standard) for normal-sized text, and 3:1 for large text (>18px or ->14px bold)
+- Information conveyed only by color is prohibited (e.g., "required fields in red")
+- Use tested color palettes (colorblind, achromatopsia, etc.)
+
+## Font and Text
+
+- Use readable fonts (sans-serif, sufficient line spacing)
+- Text must be able to be enlarged up to 200% without loss of content or functionality
+- Provide a clear heading hierarchy: unique <h1>, then <h2>, <h3>, etc.
+- No text should be presented as an image
+
+## Images and Media
+- All informative images must have relevant alternative text (alt)
+- Decorative images must be ignored by screen readers (alt="")
+- Videos must provide a transcript, or even synchronized subtitles if informative
+- Provide an accessible alternative to audio-only content (transcription)
+
+## Navigation and Keyboard
+
+- Everything must be accessible by keyboard (without mouse)
+- Logical tab order (natural or explicit tabindex)
+- Avoid keyboard traps (unreachable or blocking elements)
+- Presence of a skip link to main content (skip to content)
+
+## Forms
+
+- Each field must have a clear and visible label (even if there's a placeholder)
+- Errors must be indicated textually, not just visually
+- Field groups: use <fieldset> and <legend> tags
+
+## Structure and HTML Semantics
+
+- Use semantic tags: <header>, <main>, <footer>, <nav>
+- No structure should rely exclusively on non-semantic CSS/JS (e.g., <div> instead of <button>)
+- HTML code must be valid and well-structured (W3C validator)
+
+## Footer and Header
+
+- Footer must include: legal notices, accessibility policy, site map
+- Presence of a link to the accessibility statement (even fictional in beta version)
+- Site logo must link to the homepage
+
+## Behaviors and Animations
+
+- No rapid blinking (epileptic risk)
+- Animations must be able to be disabled or limited (prefers-reduced-motion)
+- No content should move automatically without explicit interaction
+
+## Recommended Bonus (outside RGAA but useful)
+
+- Integration of high contrast mode / text on dark background
+- Possible integration of Hello Uniweb filter from the mockup phase
+
